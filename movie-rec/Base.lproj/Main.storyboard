@@ -36,13 +36,24 @@
                                             <constraint firstAttribute="height" constant="45" id="CVn-7s-6BU"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <state key="normal" title="next reccomendation Button">
+                                        <state key="normal" title="next reccomendation button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94y-Iw-6Xf" customClass="MaterialContentView" customModule="movie_rec" customModuleProvider="target">
                                         <rect key="frame" x="12" y="336" width="576" height="69"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wsV-1F-fsp" customClass="StarControl" customModule="movie_rec" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="8" width="560" height="53"/>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="wsV-1F-fsp" firstAttribute="leading" secondItem="94y-Iw-6Xf" secondAttribute="leading" constant="8" id="6PH-bI-1rI"/>
+                                            <constraint firstAttribute="trailing" secondItem="wsV-1F-fsp" secondAttribute="trailing" constant="8" id="DIU-xr-g22"/>
+                                            <constraint firstItem="wsV-1F-fsp" firstAttribute="top" secondItem="94y-Iw-6Xf" secondAttribute="top" constant="8" id="XzX-Q1-LHA"/>
+                                            <constraint firstAttribute="bottom" secondItem="wsV-1F-fsp" secondAttribute="bottom" constant="8" id="fWz-x6-WAk"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSq-fL-C9E" customClass="MaterialContentView" customModule="movie_rec" customModuleProvider="target">
                                         <rect key="frame" x="192" y="12" width="216" height="312"/>
@@ -97,8 +108,8 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="filter-white" translatesAutoresizingMaskIntoConstraints="NO" id="vcw-6E-H37">
-                                        <rect key="frame" x="562" y="27" width="30" height="30"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filter-white" translatesAutoresizingMaskIntoConstraints="NO" id="vcw-6E-H37">
+                                        <rect key="frame" x="572" y="33" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="KbL-Zu-S1q"/>
                                             <constraint firstAttribute="height" constant="20" id="ORM-wU-Fej"/>
@@ -151,7 +162,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.91764705879999997" green="0.59655441779999996" blue="0.19929603060000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="drS-rI-uVr"/>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="drS-rI-uVr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Eq-41-h9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

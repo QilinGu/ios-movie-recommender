@@ -16,6 +16,7 @@
 		A4C7B00D1C987266009CD3A0 /* MaterialImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7B00C1C987266009CD3A0 /* MaterialImageView.swift */; };
 		A4C7B00F1C9872FB009CD3A0 /* MaterialButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7B00E1C9872FB009CD3A0 /* MaterialButtonView.swift */; };
 		A4C7B0111C987588009CD3A0 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7B0101C987588009CD3A0 /* TitleView.swift */; };
+		A4C7B0131C988172009CD3A0 /* StarControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7B0121C988172009CD3A0 /* StarControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A4C7B00C1C987266009CD3A0 /* MaterialImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialImageView.swift; sourceTree = "<group>"; };
 		A4C7B00E1C9872FB009CD3A0 /* MaterialButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButtonView.swift; sourceTree = "<group>"; };
 		A4C7B0101C987588009CD3A0 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		A4C7B0121C988172009CD3A0 /* StarControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				A4C7B00C1C987266009CD3A0 /* MaterialImageView.swift */,
 				A4C7B00E1C9872FB009CD3A0 /* MaterialButtonView.swift */,
 				A4C7B0101C987588009CD3A0 /* TitleView.swift */,
+				A4C7B0121C988172009CD3A0 /* StarControl.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A423B4751C9723A0005888E4 /* AppDelegate.swift in Sources */,
+				A4C7B0131C988172009CD3A0 /* StarControl.swift in Sources */,
 				A4C7B00F1C9872FB009CD3A0 /* MaterialButtonView.swift in Sources */,
 				A4C7B0091C985F47009CD3A0 /* TabController.swift in Sources */,
 				A4C7B00B1C987077009CD3A0 /* MaterialContentView.swift in Sources */,
