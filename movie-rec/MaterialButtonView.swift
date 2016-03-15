@@ -18,4 +18,14 @@ class MaterialButtonView: UIButton {
         self.layer.shadowOpacity = 0.8
         self.layer.shadowColor = UIColor(colorLiteralRed: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0).CGColor
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let padding: CGFloat = 12.0
+        let dim: CGFloat = self.bounds.height - (padding * 2)
+        let rect = CGRectMake(self.bounds.width - dim - padding, padding, dim, dim)
+        let arrow = UIImageView(frame: rect)
+        arrow.image = UIImage(named: "right-arrow-white")
+        addSubview(arrow)
+    }
 }
