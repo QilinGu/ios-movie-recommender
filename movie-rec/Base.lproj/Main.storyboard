@@ -7,7 +7,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Movies-->
         <scene sceneID="B5E-sS-cPc">
             <objects>
                 <viewController id="rbk-KY-a04" sceneMemberID="viewController">
@@ -27,10 +27,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="laI-rN-ihv">
-                                <rect key="frame" x="0.0" y="77" width="600" height="474"/>
+                                <rect key="frame" x="0.0" y="70" width="600" height="481"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbJ-hb-dxF" customClass="MaterialButtonView" customModule="movie_rec" customModuleProvider="target">
-                                        <rect key="frame" x="12" y="417" width="576" height="45"/>
+                                        <rect key="frame" x="12" y="424" width="576" height="45"/>
                                         <color key="backgroundColor" red="0.40392156862745099" green="0.22745098039215686" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="CVn-7s-6BU"/>
@@ -41,10 +41,10 @@
                                         </state>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94y-Iw-6Xf" customClass="MaterialContentView" customModule="movie_rec" customModuleProvider="target">
-                                        <rect key="frame" x="12" y="336" width="576" height="69"/>
+                                        <rect key="frame" x="12" y="357" width="576" height="55"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wsV-1F-fsp" customClass="StarControl" customModule="movie_rec" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="8" width="560" height="53"/>
+                                                <rect key="frame" x="8" y="8" width="560" height="39"/>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
@@ -52,14 +52,15 @@
                                             <constraint firstItem="wsV-1F-fsp" firstAttribute="leading" secondItem="94y-Iw-6Xf" secondAttribute="leading" constant="8" id="6PH-bI-1rI"/>
                                             <constraint firstAttribute="trailing" secondItem="wsV-1F-fsp" secondAttribute="trailing" constant="8" id="DIU-xr-g22"/>
                                             <constraint firstItem="wsV-1F-fsp" firstAttribute="top" secondItem="94y-Iw-6Xf" secondAttribute="top" constant="8" id="XzX-Q1-LHA"/>
+                                            <constraint firstAttribute="height" constant="55" id="f2C-G6-KnY"/>
                                             <constraint firstAttribute="bottom" secondItem="wsV-1F-fsp" secondAttribute="bottom" constant="8" id="fWz-x6-WAk"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSq-fL-C9E" customClass="MaterialContentView" customModule="movie_rec" customModuleProvider="target">
-                                        <rect key="frame" x="192" y="12" width="216" height="312"/>
+                                        <rect key="frame" x="185" y="12" width="230" height="333"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" translatesAutoresizingMaskIntoConstraints="NO" id="hYH-ld-14h" customClass="MaterialImageView" customModule="movie_rec" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="8" width="200" height="296"/>
+                                                <rect key="frame" x="8" y="8" width="214" height="317"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="hYH-ld-14h" secondAttribute="height" multiplier="400:593" id="fOn-ww-lCz"/>
                                                 </constraints>
@@ -90,16 +91,28 @@
                                     <constraint firstAttribute="bottom" secondItem="EbJ-hb-dxF" secondAttribute="bottom" constant="12" id="h7r-2H-rvC"/>
                                     <constraint firstItem="KSq-fL-C9E" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="laI-rN-ihv" secondAttribute="leading" constant="16" id="sXV-KY-GgD"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="h33-Wx-sJ9"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coD-Oq-IK4" customClass="TitleView" customModule="movie_rec" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="600" height="57"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="50"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filter-white" translatesAutoresizingMaskIntoConstraints="NO" id="vcw-6E-H37">
+                                        <rect key="frame" x="572" y="31" width="20" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="KbL-Zu-S1q"/>
+                                            <constraint firstAttribute="height" constant="15" id="ORM-wU-Fej"/>
+                                        </constraints>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Hateful Eight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="Jnt-MI-NBE">
-                                        <rect key="frame" x="40" y="4" width="520" height="49"/>
+                                        <rect key="frame" x="40" y="4" width="520" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="MFP-Ns-sHA"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
@@ -108,13 +121,6 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filter-white" translatesAutoresizingMaskIntoConstraints="NO" id="vcw-6E-H37">
-                                        <rect key="frame" x="572" y="38" width="20" height="15"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="KbL-Zu-S1q"/>
-                                            <constraint firstAttribute="height" constant="15" id="ORM-wU-Fej"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -124,7 +130,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Jnt-MI-NBE" secondAttribute="trailing" constant="40" id="MgO-bT-glg"/>
                                     <constraint firstAttribute="bottom" secondItem="Jnt-MI-NBE" secondAttribute="bottom" constant="4" id="OFA-qa-awr"/>
                                     <constraint firstAttribute="trailing" secondItem="vcw-6E-H37" secondAttribute="trailing" constant="8" id="dpE-sO-nca"/>
-                                    <constraint firstAttribute="height" constant="57" id="z6d-zR-HtA"/>
+                                    <constraint firstAttribute="height" constant="50" id="z6d-zR-HtA"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -142,7 +148,7 @@
                             <constraint firstItem="coD-Oq-IK4" firstAttribute="leading" secondItem="MWg-WO-jHO" secondAttribute="leading" id="xc0-j0-hQ4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="XKP-Ij-Ga9"/>
+                    <tabBarItem key="tabBarItem" title="Movies" image="popcorn-1x" id="XKP-Ij-Ga9"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77O-Hc-1q6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -211,6 +217,7 @@
     </scenes>
     <resources>
         <image name="filter-white" width="600" height="600"/>
+        <image name="popcorn-1x" width="25" height="25"/>
         <image name="poster" width="1200" height="1640"/>
     </resources>
 </document>
