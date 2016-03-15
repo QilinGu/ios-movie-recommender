@@ -9,7 +9,6 @@
 import UIKit
 import Foundation
 
-@IBDesignable
 class StarControl: UIControl {
     private var starAr = [UIImageView]()
     private var starCount: CGFloat = 0.0
@@ -33,7 +32,6 @@ class StarControl: UIControl {
     }
     
     func initAr() {
-        print("here")
         starAr = []
         let emptyStar = UIImage(named: "star-empty-white")
         let padding = (self.bounds.width - (self.bounds.height * CGFloat(numStars))) / CGFloat(numStars)
@@ -54,15 +52,16 @@ class StarControl: UIControl {
     override func drawRect(rect: CGRect) {
         initAr()
         self.layer.sublayers = nil
-        setNeedsDisplay()
         for star in starAr {
             addSubview(star)
         }
     }
     
-    override func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
-        beginPoint = touch.locationInView(self)
-        return true
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let touch = touches.first {
+            let currentPoint = min(max(0.0, touch.locationInView(self).x), self.bounds.width)
+            coordToStar(currentPoint)
+        }
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
