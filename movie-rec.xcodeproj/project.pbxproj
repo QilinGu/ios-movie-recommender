@@ -15,6 +15,7 @@
 		A4C7B00B1C987077009CD3A0 /* MaterialContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7B00A1C987077009CD3A0 /* MaterialContentView.swift */; };
 		A4C7B00D1C987266009CD3A0 /* MaterialImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7B00C1C987266009CD3A0 /* MaterialImageView.swift */; };
 		A4C7B00F1C9872FB009CD3A0 /* MaterialButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7B00E1C9872FB009CD3A0 /* MaterialButtonView.swift */; };
+		A4C7B0111C987588009CD3A0 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7B0101C987588009CD3A0 /* TitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A4C7B00A1C987077009CD3A0 /* MaterialContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialContentView.swift; sourceTree = "<group>"; };
 		A4C7B00C1C987266009CD3A0 /* MaterialImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialImageView.swift; sourceTree = "<group>"; };
 		A4C7B00E1C9872FB009CD3A0 /* MaterialButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButtonView.swift; sourceTree = "<group>"; };
+		A4C7B0101C987588009CD3A0 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				A4C7B00A1C987077009CD3A0 /* MaterialContentView.swift */,
 				A4C7B00C1C987266009CD3A0 /* MaterialImageView.swift */,
 				A4C7B00E1C9872FB009CD3A0 /* MaterialButtonView.swift */,
+				A4C7B0101C987588009CD3A0 /* TitleView.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				A4C7B0091C985F47009CD3A0 /* TabController.swift in Sources */,
 				A4C7B00B1C987077009CD3A0 /* MaterialContentView.swift in Sources */,
 				A4C7B00D1C987266009CD3A0 /* MaterialImageView.swift in Sources */,
+				A4C7B0111C987588009CD3A0 /* TitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
