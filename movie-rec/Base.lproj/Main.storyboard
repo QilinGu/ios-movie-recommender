@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="movie title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jnt-MI-NBE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jnt-MI-NBE">
                                 <rect key="frame" x="20" y="24" width="560" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="MFP-Ns-sHA"/>
@@ -39,24 +39,25 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="laI-rN-ihv">
                                 <rect key="frame" x="0.0" y="77" width="600" height="474"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbJ-hb-dxF">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbJ-hb-dxF" customClass="MaterialButtonView" customModule="movie_rec" customModuleProvider="target">
                                         <rect key="frame" x="12" y="417" width="576" height="45"/>
                                         <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="CVn-7s-6BU"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <state key="normal" title="next movie button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94y-Iw-6Xf">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94y-Iw-6Xf" customClass="MaterialContentView" customModule="movie_rec" customModuleProvider="target">
                                         <rect key="frame" x="12" y="329" width="576" height="76"/>
                                         <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSq-fL-C9E">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSq-fL-C9E" customClass="MaterialContentView" customModule="movie_rec" customModuleProvider="target">
                                         <rect key="frame" x="195" y="12" width="210" height="305"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" translatesAutoresizingMaskIntoConstraints="NO" id="hYH-ld-14h">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" translatesAutoresizingMaskIntoConstraints="NO" id="hYH-ld-14h" customClass="MaterialImageView" customModule="movie_rec" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="8" width="194" height="289"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="hYH-ld-14h" secondAttribute="height" multiplier="400:593" id="fOn-ww-lCz"/>
@@ -70,21 +71,13 @@
                                             <constraint firstAttribute="trailing" secondItem="hYH-ld-14h" secondAttribute="trailing" constant="8" id="fHI-Uy-Wl7"/>
                                             <constraint firstItem="hYH-ld-14h" firstAttribute="leading" secondItem="KSq-fL-C9E" secondAttribute="leading" constant="8" id="gpo-UG-XMh"/>
                                             <constraint firstAttribute="bottom" secondItem="hYH-ld-14h" secondAttribute="bottom" constant="8" id="p1s-3C-Ng3"/>
-                                            <constraint firstAttribute="height" constant="100" id="s7O-eA-BbO"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="s7O-eA-BbO"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="94y-Iw-6Xf" firstAttribute="leading" secondItem="laI-rN-ihv" secondAttribute="leading" constant="12" id="3Vo-S8-o79"/>
-                                    <constraint firstItem="94y-Iw-6Xf" firstAttribute="leading" secondItem="laI-rN-ihv" secondAttribute="leading" constant="20" id="4bd-cJ-t2n"/>
-                                    <constraint firstAttribute="trailing" secondItem="KSq-fL-C9E" secondAttribute="trailing" constant="12" id="4wG-0l-GD6"/>
-                                    <constraint firstAttribute="trailing" secondItem="94y-Iw-6Xf" secondAttribute="trailing" constant="20" id="6B8-aY-bzY"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KSq-fL-C9E" secondAttribute="trailing" constant="16" id="8gJ-D5-RTH"/>
                                     <constraint firstItem="94y-Iw-6Xf" firstAttribute="top" secondItem="KSq-fL-C9E" secondAttribute="bottom" constant="12" id="CRQ-Kc-KlK"/>
                                     <constraint firstAttribute="trailing" secondItem="EbJ-hb-dxF" secondAttribute="trailing" constant="12" id="DQj-LZ-r9d"/>
                                     <constraint firstItem="KSq-fL-C9E" firstAttribute="centerX" secondItem="laI-rN-ihv" secondAttribute="centerX" id="IVm-gY-9KV"/>
@@ -92,43 +85,25 @@
                                     <constraint firstAttribute="trailing" secondItem="94y-Iw-6Xf" secondAttribute="trailing" constant="12" id="T5P-oC-3bY"/>
                                     <constraint firstItem="EbJ-hb-dxF" firstAttribute="leading" secondItem="laI-rN-ihv" secondAttribute="leading" constant="12" id="YDI-BH-jyd"/>
                                     <constraint firstItem="EbJ-hb-dxF" firstAttribute="top" secondItem="94y-Iw-6Xf" secondAttribute="bottom" constant="12" id="eHu-cl-9Nm"/>
-                                    <constraint firstItem="KSq-fL-C9E" firstAttribute="leading" secondItem="laI-rN-ihv" secondAttribute="leading" constant="12" id="fMd-Rg-BO8"/>
                                     <constraint firstItem="KSq-fL-C9E" firstAttribute="height" secondItem="94y-Iw-6Xf" secondAttribute="height" multiplier="4" id="h33-Wx-sJ9"/>
                                     <constraint firstAttribute="bottom" secondItem="EbJ-hb-dxF" secondAttribute="bottom" constant="12" id="h7r-2H-rvC"/>
+                                    <constraint firstItem="KSq-fL-C9E" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="laI-rN-ihv" secondAttribute="leading" constant="16" id="sXV-KY-GgD"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="4wG-0l-GD6"/>
-                                        <exclude reference="fMd-Rg-BO8"/>
-                                        <exclude reference="4bd-cJ-t2n"/>
-                                        <exclude reference="6B8-aY-bzY"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="laI-rN-ihv" firstAttribute="leading" secondItem="MWg-WO-jHO" secondAttribute="leading" id="76h-Qt-q1X"/>
-                            <constraint firstItem="laI-rN-ihv" firstAttribute="top" secondItem="BNu-JG-smS" secondAttribute="bottom" constant="50" id="8wH-XJ-g2T"/>
                             <constraint firstItem="Jnt-MI-NBE" firstAttribute="trailing" secondItem="MWg-WO-jHO" secondAttribute="trailingMargin" id="DNP-iD-DyF"/>
                             <constraint firstItem="xJw-wH-4bU" firstAttribute="top" secondItem="MWg-WO-jHO" secondAttribute="top" id="DmJ-vN-ptY"/>
                             <constraint firstItem="drA-3I-Nbr" firstAttribute="top" secondItem="laI-rN-ihv" secondAttribute="bottom" id="FUw-WE-grP"/>
                             <constraint firstItem="Jnt-MI-NBE" firstAttribute="leading" secondItem="MWg-WO-jHO" secondAttribute="leadingMargin" id="P4z-hX-JVw"/>
-                            <constraint firstItem="laI-rN-ihv" firstAttribute="top" secondItem="Jnt-MI-NBE" secondAttribute="bottom" id="Phn-vC-87x"/>
                             <constraint firstItem="Jnt-MI-NBE" firstAttribute="top" secondItem="BNu-JG-smS" secondAttribute="bottom" constant="4" id="SlF-vW-ZuC"/>
                             <constraint firstItem="laI-rN-ihv" firstAttribute="top" secondItem="Jnt-MI-NBE" secondAttribute="bottom" constant="8" id="i0V-wP-GQR"/>
                             <constraint firstAttribute="trailing" secondItem="xJw-wH-4bU" secondAttribute="trailing" id="lMf-Ei-Hm3"/>
                             <constraint firstItem="xJw-wH-4bU" firstAttribute="leading" secondItem="MWg-WO-jHO" secondAttribute="leading" id="nBN-uC-0Uq"/>
-                            <constraint firstItem="Jnt-MI-NBE" firstAttribute="top" secondItem="BNu-JG-smS" secondAttribute="bottom" constant="8" id="pVS-f5-WpN"/>
                             <constraint firstAttribute="trailing" secondItem="laI-rN-ihv" secondAttribute="trailing" id="qC1-u4-zl6"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="pVS-f5-WpN"/>
-                                <exclude reference="8wH-XJ-g2T"/>
-                                <exclude reference="Phn-vC-87x"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="mostViewed" id="XKP-Ij-Ga9"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
