@@ -33,17 +33,20 @@ class StarControl: UIControl {
     
     func initAr() {
         starAr = []
-        let emptyStar = UIImage(named: "star-empty-white")
+        let emptyStar = UIImage(named: "star-empty-gold")
         let padding = (self.bounds.width - (self.bounds.height * CGFloat(numStars))) / CGFloat(numStars)
         for i in 0...numStars - 1 {
             let rect = CGRectMake(CGFloat(i) * (self.bounds.height + padding) + (padding/2), 0.0, self.bounds.height, self.bounds.height)
             let star = UIImageView(frame: rect)
             if i < Int(starCount) {
-                star.image = UIImage(named: "star-full-white")
+                star.image = UIImage(named: "star-full-gold")
             } else if CGFloat(i) < starCount {
-                star.image = UIImage(named: "star-half-white")
+                star.image = UIImage(named: "star-half-gold")
             } else {
                 star.image = emptyStar
+                if StarCount == 0 {
+                    star.alpha = 0.3
+                }
             }
             starAr.append(star)
         }
