@@ -10,7 +10,7 @@
         <!--Movies-->
         <scene sceneID="B5E-sS-cPc">
             <objects>
-                <viewController id="rbk-KY-a04" sceneMemberID="viewController">
+                <viewController id="rbk-KY-a04" customClass="MovieController" customModule="movie_rec" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BNu-JG-smS"/>
                         <viewControllerLayoutGuide type="bottom" id="drA-3I-Nbr"/>
@@ -27,40 +27,43 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="laI-rN-ihv">
-                                <rect key="frame" x="0.0" y="70" width="600" height="481"/>
+                                <rect key="frame" x="0.0" y="60" width="600" height="491"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbJ-hb-dxF" customClass="MaterialButtonView" customModule="movie_rec" customModuleProvider="target">
-                                        <rect key="frame" x="12" y="424" width="576" height="45"/>
-                                        <color key="backgroundColor" red="0.40392156862745099" green="0.22745098039215686" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="12" y="434" width="576" height="45"/>
+                                        <color key="backgroundColor" red="0.0" green="0.56862745098039214" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="CVn-7s-6BU"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <state key="normal" title="next recommendation">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94y-Iw-6Xf" customClass="MaterialContentView" customModule="movie_rec" customModuleProvider="target">
-                                        <rect key="frame" x="12" y="357" width="576" height="55"/>
+                                        <rect key="frame" x="12" y="377" width="576" height="45"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wsV-1F-fsp" customClass="StarControl" customModule="movie_rec" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="8" width="560" height="39"/>
+                                                <rect key="frame" x="4" y="8" width="568" height="29"/>
+                                                <connections>
+                                                    <action selector="starChanged:" destination="rbk-KY-a04" eventType="valueChanged" id="AjX-Hy-BWT"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="wsV-1F-fsp" firstAttribute="leading" secondItem="94y-Iw-6Xf" secondAttribute="leading" constant="8" id="6PH-bI-1rI"/>
-                                            <constraint firstAttribute="trailing" secondItem="wsV-1F-fsp" secondAttribute="trailing" constant="8" id="DIU-xr-g22"/>
+                                            <constraint firstItem="wsV-1F-fsp" firstAttribute="leading" secondItem="94y-Iw-6Xf" secondAttribute="leading" constant="4" id="6PH-bI-1rI"/>
+                                            <constraint firstAttribute="trailing" secondItem="wsV-1F-fsp" secondAttribute="trailing" constant="4" id="DIU-xr-g22"/>
                                             <constraint firstItem="wsV-1F-fsp" firstAttribute="top" secondItem="94y-Iw-6Xf" secondAttribute="top" constant="8" id="XzX-Q1-LHA"/>
-                                            <constraint firstAttribute="height" constant="55" id="f2C-G6-KnY"/>
+                                            <constraint firstAttribute="height" constant="45" id="f2C-G6-KnY"/>
                                             <constraint firstAttribute="bottom" secondItem="wsV-1F-fsp" secondAttribute="bottom" constant="8" id="fWz-x6-WAk"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSq-fL-C9E" customClass="MaterialContentView" customModule="movie_rec" customModuleProvider="target">
-                                        <rect key="frame" x="185" y="12" width="230" height="333"/>
+                                        <rect key="frame" x="178" y="12" width="244" height="353"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" translatesAutoresizingMaskIntoConstraints="NO" id="hYH-ld-14h" customClass="MaterialImageView" customModule="movie_rec" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="8" width="214" height="317"/>
+                                                <rect key="frame" x="8" y="8" width="228" height="337"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="hYH-ld-14h" secondAttribute="height" multiplier="400:593" id="fOn-ww-lCz"/>
                                                 </constraints>
@@ -98,21 +101,21 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coD-Oq-IK4" customClass="TitleView" customModule="movie_rec" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="600" height="50"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="40"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filter-white" translatesAutoresizingMaskIntoConstraints="NO" id="vcw-6E-H37">
-                                        <rect key="frame" x="572" y="31" width="20" height="15"/>
+                                        <rect key="frame" x="568" y="13" width="20" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="KbL-Zu-S1q"/>
                                             <constraint firstAttribute="height" constant="15" id="ORM-wU-Fej"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Hateful Eight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="Jnt-MI-NBE">
-                                        <rect key="frame" x="40" y="4" width="520" height="42"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Hateful Eight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jnt-MI-NBE">
+                                        <rect key="frame" x="40" y="4" width="520" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="MFP-Ns-sHA"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
@@ -126,12 +129,20 @@
                                 <constraints>
                                     <constraint firstItem="Jnt-MI-NBE" firstAttribute="top" secondItem="coD-Oq-IK4" secondAttribute="top" constant="4" id="AyL-cG-ucs"/>
                                     <constraint firstItem="Jnt-MI-NBE" firstAttribute="leading" secondItem="coD-Oq-IK4" secondAttribute="leading" constant="40" id="BDS-0U-EJY"/>
+                                    <constraint firstItem="vcw-6E-H37" firstAttribute="leading" secondItem="Jnt-MI-NBE" secondAttribute="trailing" constant="12" id="DRZ-Y0-PBT"/>
                                     <constraint firstAttribute="bottom" secondItem="vcw-6E-H37" secondAttribute="bottom" constant="4" id="GAl-IW-OvJ"/>
                                     <constraint firstAttribute="trailing" secondItem="Jnt-MI-NBE" secondAttribute="trailing" constant="40" id="MgO-bT-glg"/>
                                     <constraint firstAttribute="bottom" secondItem="Jnt-MI-NBE" secondAttribute="bottom" constant="4" id="OFA-qa-awr"/>
-                                    <constraint firstAttribute="trailing" secondItem="vcw-6E-H37" secondAttribute="trailing" constant="8" id="dpE-sO-nca"/>
-                                    <constraint firstAttribute="height" constant="50" id="z6d-zR-HtA"/>
+                                    <constraint firstItem="vcw-6E-H37" firstAttribute="centerY" secondItem="coD-Oq-IK4" secondAttribute="centerY" constant="1" id="czL-vQ-5rh"/>
+                                    <constraint firstAttribute="trailing" secondItem="vcw-6E-H37" secondAttribute="trailing" constant="12" id="dpE-sO-nca"/>
+                                    <constraint firstAttribute="height" constant="40" id="z6d-zR-HtA"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="DRZ-Y0-PBT"/>
+                                        <exclude reference="GAl-IW-OvJ"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -150,10 +161,14 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Movies" image="popcorn-1x" id="XKP-Ij-Ga9"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="recBtn" destination="EbJ-hb-dxF" id="Zp2-2M-8rb"/>
+                        <outlet property="starControl" destination="wsV-1F-fsp" id="CUQ-ii-qqk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77O-Hc-1q6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="172" y="1215"/>
+            <point key="canvasLocation" x="172" y="1231"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Pk0-ca-MEc">
@@ -212,7 +227,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="24f-WF-WBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="191" y="434"/>
+            <point key="canvasLocation" x="172" y="439"/>
         </scene>
     </scenes>
     <resources>

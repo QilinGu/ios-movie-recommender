@@ -72,6 +72,7 @@ class StarControl: UIControl {
             let currentPoint = min(max(0.0, touch.locationInView(self).x), self.bounds.width)
             coordToStar(currentPoint)
         }
+        self.sendActionsForControlEvents(.ValueChanged)
     }
     
     func coordToStar(point: CGFloat) {
@@ -80,6 +81,7 @@ class StarControl: UIControl {
         str = round(str * 2) / 2
         starCount = str
         setNeedsDisplay()
+        self.sendActionsForControlEvents(.ValueChanged)
     }
 
 
