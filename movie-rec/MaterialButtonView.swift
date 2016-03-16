@@ -11,12 +11,11 @@ import UIKit
 class MaterialButtonView: UIButton {
 
     override func awakeFromNib() {
+        self.layer.shadowOffset = CGSizeMake(2.0, 2.0)
+        self.layer.shadowRadius = 2.0
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowColor = UIColor(colorLiteralRed: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 0.3).CGColor
         self.layer.cornerRadius = 3.0
-        self.clipsToBounds = true
-        self.layer.shadowOffset = CGSizeMake(3.0, 3.0)
-        self.layer.shadowRadius = 1.0
-        self.layer.shadowOpacity = 0.8
-        self.layer.shadowColor = UIColor(colorLiteralRed: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0).CGColor
     }
     
     override func layoutSubviews() {

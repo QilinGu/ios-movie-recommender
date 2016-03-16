@@ -20,10 +20,10 @@ class MovieController: UIViewController {
     func setRec() {
         if starControl.StarCount > 0 {
             recBtn.alpha = 1.0
-            recBtn.enabled = true
+            recBtn.setTitle("next recommendation", forState: .Normal)
         } else {
-            recBtn.alpha = 0.3
-            recBtn.enabled = false
+            recBtn.alpha = 0.7
+            recBtn.setTitle("I haven't seen it", forState: .Normal)
         }
     }
 
