@@ -21,6 +21,8 @@
 		A4F46B011C9B2BB00081E867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4F46AFF1C9B2BB00081E867 /* Main.storyboard */; };
 		A4F46B031C9B2D0B0081E867 /* filterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F46B021C9B2D0B0081E867 /* filterVC.swift */; };
 		A4F46B051C9B365F0081E867 /* MovieDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F46B041C9B365F0081E867 /* MovieDetailController.swift */; };
+		A4F46B071C9B48A70081E867 /* Similar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F46B061C9B48A70081E867 /* Similar.swift */; };
+		A4F46B091C9B48D20081E867 /* SimilarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F46B081C9B48D20081E867 /* SimilarCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		A4F46B001C9B2BB00081E867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4F46B021C9B2D0B0081E867 /* filterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = filterVC.swift; sourceTree = "<group>"; };
 		A4F46B041C9B365F0081E867 /* MovieDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailController.swift; sourceTree = "<group>"; };
+		A4F46B061C9B48A70081E867 /* Similar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Similar.swift; sourceTree = "<group>"; };
+		A4F46B081C9B48D20081E867 /* SimilarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimilarCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 		A4C7B0051C985B3C009CD3A0 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				A4F46B061C9B48A70081E867 /* Similar.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -100,6 +105,7 @@
 				A4C7B0101C987588009CD3A0 /* TitleView.swift */,
 				A4C7B0121C988172009CD3A0 /* StarControl.swift */,
 				A4C34F7D1C99B97A00DFF6AC /* SegButtonView.swift */,
+				A4F46B081C9B48D20081E867 /* SimilarCell.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -190,11 +196,13 @@
 				A4C34F7E1C99B97A00DFF6AC /* SegButtonView.swift in Sources */,
 				A423B4751C9723A0005888E4 /* AppDelegate.swift in Sources */,
 				A4C7B0131C988172009CD3A0 /* StarControl.swift in Sources */,
+				A4F46B091C9B48D20081E867 /* SimilarCell.swift in Sources */,
 				A4C7B00F1C9872FB009CD3A0 /* MaterialButtonView.swift in Sources */,
 				A4C7B0091C985F47009CD3A0 /* TabController.swift in Sources */,
 				A4F46B051C9B365F0081E867 /* MovieDetailController.swift in Sources */,
 				A4E4264A1C98DFFA004E7C17 /* MovieController.swift in Sources */,
 				A4C7B00B1C987077009CD3A0 /* MaterialContentView.swift in Sources */,
+				A4F46B071C9B48A70081E867 /* Similar.swift in Sources */,
 				A4C7B00D1C987266009CD3A0 /* MaterialImageView.swift in Sources */,
 				A4C7B0111C987588009CD3A0 /* TitleView.swift in Sources */,
 			);
