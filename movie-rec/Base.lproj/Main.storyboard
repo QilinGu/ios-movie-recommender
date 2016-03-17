@@ -187,12 +187,12 @@
                                         </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFD-kS-7nY">
-                                        <rect key="frame" x="563" y="11" width="25" height="20"/>
+                                        <rect key="frame" x="563" y="9" width="25" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="YB5-Rp-vw1"/>
+                                            <constraint firstAttribute="height" constant="25" id="YB5-Rp-vw1"/>
                                             <constraint firstAttribute="width" constant="25" id="cV8-Eh-If6"/>
                                         </constraints>
-                                        <state key="normal" image="filter-white"/>
+                                        <state key="normal" image="filter-grey"/>
                                         <connections>
                                             <action selector="filterPressed:" destination="rbk-KY-a04" eventType="touchUpInside" id="pMR-ga-8fW"/>
                                             <segue destination="YYh-rt-Vax" kind="popoverPresentation" identifier="filterVC" popoverAnchorView="oFD-kS-7nY" id="VFM-66-tk8">
@@ -439,7 +439,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="filter-white" width="600" height="600"/>
+        <image name="filter-grey" width="600" height="600"/>
         <image name="popcorn-1x" width="25" height="25"/>
         <image name="poster" width="1200" height="1640"/>
     </resources>
