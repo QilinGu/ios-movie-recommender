@@ -8,13 +8,14 @@
 
 import UIKit
 
-class MovieController: UIViewController {
+class MovieController: UIViewController,UIPopoverPresentationControllerDelegate{
     @IBOutlet weak var starControl: StarControl!
     @IBOutlet weak var recBtn: MaterialButtonView!
     @IBOutlet weak var posterView: MaterialContentView!
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var posterConstraint: NSLayoutConstraint!
     @IBOutlet weak var starView: MaterialContentView!
+    @IBOutlet weak var filterBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +70,30 @@ class MovieController: UIViewController {
         }
     }
     
+    @IBAction func filterPressed(sender: AnyObject) {
+        performSegueWithIdentifier("filterVC", sender: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if "filterVC" == segue.identifier {
+            if let popoverViewController = segue.destinationViewController as? filterVC {
+                popoverViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
+                popoverViewController.popoverPresentationController!.delegate = self
+                let rct = popoverViewController.popoverPresentationController!.sourceRect
+                popoverViewController.popoverPresentationController!.sourceRect = rct.offsetBy(dx: filterBtn.bounds.width / 2.0, dy: filterBtn.bounds.height)
+                popoverViewController.popoverPresentationController!.permittedArrowDirections = .Up
+            }
+        }
+    }
+    
+    func popoverPresentationControllerDidDismissPopover(popoverPresentationController: UIPopoverPresentationController) {
+        //update filter
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
+    }
+    
     func nextMovie() {
         let totalDuration = 0.75
         self.posterConstraint.constant = -self.view.frame.width
@@ -76,7 +101,7 @@ class MovieController: UIViewController {
         UIView.animateWithDuration(totalDuration/2, animations: {
             self.movieTitle.alpha = 0.0
             self.view.layoutIfNeeded()
-            }, completion: { b in
+            }, completion: { finished in
                 self.posterConstraint.constant = self.view.frame.width
                 self.view.layoutIfNeeded()
                 self.posterConstraint.constant = 0
