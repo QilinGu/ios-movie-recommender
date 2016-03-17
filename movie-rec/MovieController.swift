@@ -13,6 +13,7 @@ class MovieController: UIViewController {
     @IBOutlet weak var recBtn: MaterialButtonView!
     @IBOutlet weak var posterView: MaterialContentView!
     @IBOutlet weak var movieTitle: UILabel!
+    @IBOutlet weak var posterConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,7 @@ class MovieController: UIViewController {
     }
     
     func setRec() {
-        if starControl.StarCount > 0 {
+        if starControl.currentStarCount > 0 {
             recBtn.alpha = 1.0
             recBtn.setTitle("next recommendation", forState: .Normal)
         } else {
@@ -34,7 +35,7 @@ class MovieController: UIViewController {
     }
 
     @IBAction func nextPressed(sender: AnyObject) {
-        if starControl.StarCount == 0 {
+        if starControl.currentStarCount == 0 {
             //skip
         } else {
             //send review
@@ -43,7 +44,21 @@ class MovieController: UIViewController {
     }
     
     func nextMovie() {
-        //animate to left 
+        let totalDuration = 0.75
+        self.posterConstraint.constant = -self.view.frame.width
+        starControl.animateReset(totalDuration)
+        UIView.animateWithDuration(totalDuration/2, animations: {
+            self.movieTitle.alpha = 0.0
+            self.view.layoutIfNeeded()
+            }, completion: { b in
+                self.posterConstraint.constant = self.view.frame.width
+                self.view.layoutIfNeeded()
+                self.posterConstraint.constant = 0
+                //TODO update title and image
+                UIView.animateWithDuration(totalDuration/2) {
+                    self.movieTitle.alpha = 1.0
+                    self.view.layoutIfNeeded()
+                }
+            })
     }
-    
 }
