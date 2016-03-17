@@ -14,8 +14,8 @@ class SegButtonView: UIControl {
     let darkColor = UIColor(colorLiteralRed: 33.0/255.0, green: 33.0/255.0, blue: 33.0/255.0, alpha: 1.0)
     let lightColor = UIColor(colorLiteralRed: 99.0/255.0, green: 99.0/255.0, blue: 99.0/255.0, alpha: 1.0)
     private var leftSelected = true
-    var rightBtn: UIButton!
-    var leftBtn: UIButton!
+    var rightLbl: UILabel!
+    var leftLbl: UILabel!
     
     var isLeftSelected: Bool {
         return leftSelected
@@ -33,23 +33,23 @@ class SegButtonView: UIControl {
         let width = self.bounds.width
         
         let lRect = CGRectMake(0, 0, width / 2, self.bounds.height)
-        leftBtn = UIButton(frame: lRect)
-        leftBtn.setTitle("recommended", forState: .Normal)
-        leftBtn.setTitleColor(blueColor, forState: .Normal)
-        leftBtn.backgroundColor = darkColor
-        leftBtn.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 14.0)
-        leftBtn.userInteractionEnabled = false
+        leftLbl = UILabel(frame: lRect)
+        leftLbl.text = "recommended"
+        leftLbl.textColor = blueColor
+        leftLbl.backgroundColor = darkColor
+        leftLbl.font = UIFont(name: "Helvetica Neue", size: 14.0)
+        leftLbl.textAlignment = .Center
         
         let rRect = CGRectMake(width / 2, 0, width / 2, self.bounds.height)
-        rightBtn = UIButton(frame: rRect)
-        rightBtn.setTitle("Similar", forState: .Normal)
-        rightBtn.setTitleColor(lightColor, forState: .Normal)
-        rightBtn.backgroundColor = darkColor
-        rightBtn.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 14.0)
-        rightBtn.userInteractionEnabled = false
+        rightLbl = UILabel(frame: rRect)
+        rightLbl.text = "Similar"
+        rightLbl.textColor = lightColor
+        rightLbl.backgroundColor = darkColor
+        rightLbl.font = UIFont(name: "Helvetica Neue", size: 14.0)
+        rightLbl.textAlignment = .Center
         
-        addSubview(leftBtn)
-        addSubview(rightBtn)
+        addSubview(leftLbl)
+        addSubview(rightLbl)
     }
     
     override func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
@@ -57,14 +57,14 @@ class SegButtonView: UIControl {
         if location.x > (self.bounds.width / 2) && leftSelected{
             leftSelected = false
             self.sendActionsForControlEvents(.ValueChanged)
-            rightBtn.setTitleColor(blueColor, forState: .Normal)
-            leftBtn.setTitleColor(lightColor, forState: .Normal)
+            rightLbl.textColor = blueColor
+            leftLbl.textColor = lightColor
             return true
-        } else if !leftSelected{
+        } else if location.x <= (self.bounds.width / 2) && !leftSelected{
             leftSelected = true
             self.sendActionsForControlEvents(.ValueChanged)
-            rightBtn.setTitleColor(lightColor, forState: .Normal)
-            leftBtn.setTitleColor(blueColor, forState: .Normal)
+            rightLbl.textColor = lightColor
+            leftLbl.textColor = blueColor
         }
         return true
     }
