@@ -14,6 +14,7 @@ class MovieController: UIViewController {
     @IBOutlet weak var posterView: MaterialContentView!
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var posterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var starView: MaterialContentView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,31 @@ class MovieController: UIViewController {
             //send review
         }
         nextMovie()
+    }
+    
+    @IBAction func segPressed(sender: SegButtonView) {
+        if sender.isLeftSelected {
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
+                self.starView.hidden = false
+                self.posterView.hidden = false
+                self.recBtn.hidden = false
+                self.starView.alpha = 1.0
+                self.posterView.alpha = 1.0
+                self.recBtn.alpha = 1.0
+                }, completion: { (Bool) -> Void in
+            })
+            
+        } else {
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
+                self.starView.alpha = 0.0
+                self.posterView.alpha = 0.0
+                self.recBtn.alpha = 0.0
+                }, completion: { (Bool) -> Void in
+                    self.starView.hidden = true
+                    self.posterView.hidden = true
+                    self.recBtn.hidden = true
+            })
+        }
     }
     
     func nextMovie() {

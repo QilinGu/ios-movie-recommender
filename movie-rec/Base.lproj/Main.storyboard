@@ -86,6 +86,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="4NJ-Oa-slX"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="segPressed:" destination="rbk-KY-a04" eventType="valueChanged" id="cZO-Tw-8lT"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
@@ -171,6 +174,7 @@
                         <outlet property="posterView" destination="KSq-fL-C9E" id="pff-U1-7Tb"/>
                         <outlet property="recBtn" destination="EbJ-hb-dxF" id="54e-e8-uaj"/>
                         <outlet property="starControl" destination="wsV-1F-fsp" id="CUQ-ii-qqk"/>
+                        <outlet property="starView" destination="94y-Iw-6Xf" id="cSb-G7-2sw"/>
                         <segue destination="YYh-rt-Vax" kind="presentation" identifier="filterVC" id="eVG-TZ-9bD"/>
                         <segue destination="Vis-Gh-5Ik" kind="presentation" identifier="detailVC" id="gId-Je-1Sh"/>
                     </connections>
