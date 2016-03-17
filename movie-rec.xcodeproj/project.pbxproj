@@ -11,6 +11,7 @@
 		A423B47A1C9723A0005888E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A423B4781C9723A0005888E4 /* Main.storyboard */; };
 		A423B47C1C9723A0005888E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A423B47B1C9723A0005888E4 /* Assets.xcassets */; };
 		A423B47F1C9723A0005888E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A423B47D1C9723A0005888E4 /* LaunchScreen.storyboard */; };
+		A4C34F7E1C99B97A00DFF6AC /* SegButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C34F7D1C99B97A00DFF6AC /* SegButtonView.swift */; };
 		A4C7B0091C985F47009CD3A0 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7B0081C985F47009CD3A0 /* TabController.swift */; };
 		A4C7B00B1C987077009CD3A0 /* MaterialContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7B00A1C987077009CD3A0 /* MaterialContentView.swift */; };
 		A4C7B00D1C987266009CD3A0 /* MaterialImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7B00C1C987266009CD3A0 /* MaterialImageView.swift */; };
@@ -27,6 +28,7 @@
 		A423B47B1C9723A0005888E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A423B47E1C9723A0005888E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A423B4801C9723A0005888E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4C34F7D1C99B97A00DFF6AC /* SegButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegButtonView.swift; sourceTree = "<group>"; };
 		A4C7B0081C985F47009CD3A0 /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		A4C7B00A1C987077009CD3A0 /* MaterialContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialContentView.swift; sourceTree = "<group>"; };
 		A4C7B00C1C987266009CD3A0 /* MaterialImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialImageView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				A4C7B00E1C9872FB009CD3A0 /* MaterialButtonView.swift */,
 				A4C7B0101C987588009CD3A0 /* TitleView.swift */,
 				A4C7B0121C988172009CD3A0 /* StarControl.swift */,
+				A4C34F7D1C99B97A00DFF6AC /* SegButtonView.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4C34F7E1C99B97A00DFF6AC /* SegButtonView.swift in Sources */,
 				A423B4751C9723A0005888E4 /* AppDelegate.swift in Sources */,
 				A4C7B0131C988172009CD3A0 /* StarControl.swift in Sources */,
 				A4C7B00F1C9872FB009CD3A0 /* MaterialButtonView.swift in Sources */,

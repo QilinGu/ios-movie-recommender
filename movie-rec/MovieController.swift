@@ -11,6 +11,8 @@ import UIKit
 class MovieController: UIViewController {
     @IBOutlet weak var starControl: StarControl!
     @IBOutlet weak var recBtn: MaterialButtonView!
+    @IBOutlet weak var posterView: MaterialContentView!
+    @IBOutlet weak var movieTitle: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,4 +33,17 @@ class MovieController: UIViewController {
         setRec()
     }
 
+    @IBAction func nextPressed(sender: AnyObject) {
+        if starControl.StarCount == 0 {
+            //skip
+        } else {
+            //send review
+        }
+        nextMovie()
+    }
+    
+    func nextMovie() {
+        //animate to left 
+    }
+    
 }
