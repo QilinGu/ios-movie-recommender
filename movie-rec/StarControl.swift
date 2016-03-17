@@ -15,7 +15,7 @@ class StarControl: UIControl {
     private var beginPoint: CGPoint?
     private let numStars: Int = 5
     
-    var StarCount: CGFloat {
+    var currentStarCount: CGFloat {
         return starCount
     }
     
@@ -44,7 +44,7 @@ class StarControl: UIControl {
                 star.image = UIImage(named: "star-half-gold")
             } else {
                 star.image = emptyStar
-                if StarCount == 0 {
+                if starCount == 0 {
                     star.alpha = 0.3
                 }
             }
@@ -82,6 +82,23 @@ class StarControl: UIControl {
         starCount = str
         setNeedsDisplay()
         self.sendActionsForControlEvents(.ValueChanged)
+    }
+    
+    func animateReset(duration: NSTimeInterval) {
+        let transitionOptions = UIViewAnimationOptions.TransitionFlipFromLeft
+        let empty = UIImage(named: "star-empty-gold")
+        
+        for var i = starAr.count - 1; i >= 0; --i {
+            let dest = UIImageView(frame: starAr[i].frame)
+            dest.image = empty
+            UIView.animateWithDuration(duration, delay: 0.0, options: transitionOptions, animations: { () -> Void in
+                self.starAr[i].alpha = 0.3
+                }, completion: { (Bool) -> Void in
+                    self.starCount = 0.0
+                    self.setNeedsDisplay()
+                    self.sendActionsForControlEvents(.ValueChanged)
+            })
+        }
     }
 
 
