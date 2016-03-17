@@ -115,6 +115,11 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
                 popoverViewController.popoverPresentationController!.permittedArrowDirections = .Up
             }
         }
+        if "detailVC" == segue.identifier {
+            if let destinationVC = segue.destinationViewController as? MovieDetailController {
+                destinationVC.movieTitle = movieTitle.text
+            }
+        }
     }
     
     func popoverPresentationControllerDidDismissPopover(popoverPresentationController: UIPopoverPresentationController) {
