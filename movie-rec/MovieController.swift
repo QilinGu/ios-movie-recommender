@@ -108,7 +108,6 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if "filterVC" == segue.identifier {
             if let popoverViewController = segue.destinationViewController as? filterVC {
-                popoverViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
                 popoverViewController.popoverPresentationController!.delegate = self
                 let rct = popoverViewController.popoverPresentationController!.sourceRect
                 popoverViewController.popoverPresentationController!.sourceRect = rct.offsetBy(dx: filterBtn.bounds.width / 2.0, dy: filterBtn.bounds.height)

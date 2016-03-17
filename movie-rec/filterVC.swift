@@ -8,25 +8,42 @@
 
 import UIKit
 
-class filterVC: UIViewController {
-
+class filterVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var tableView: UITableView!
+    var categoryAr = [MovieCategory]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        if !UIAccessibilityIsReduceTransparencyEnabled() {
-            self.view.backgroundColor = UIColor.clearColor()
-            
-            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-            let blurEffectView = UIVisualEffectView(effect: blurEffect)
-            //always fill the view
-            blurEffectView.frame = self.view.bounds
-            blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-            
-            self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
-        } 
-        else {
-            self.view.backgroundColor = UIColor.redColor()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.layer.cornerRadius = 7.0
+        tableView.clipsToBounds = true
+        
+        categoryAr.append(MovieCategory(tag: "Comedy", state: true))
+        categoryAr.append(MovieCategory(tag: "Comedy", state: true))
+        categoryAr.append(MovieCategory(tag: "Comedy", state: true))
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 40.0
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return categoryAr.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cat = categoryAr[indexPath.row]
+        if let cell = tableView.dequeueReusableCellWithIdentifier("categoryCell") as? CategoryCell {
+            cell.configureCell(cat)
+            return cell
+        } else {
+            return CategoryCell()
         }
-
     }
 
 }
