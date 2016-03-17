@@ -15,11 +15,19 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate{
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var posterConstraint: NSLayoutConstraint!
     @IBOutlet weak var starView: MaterialContentView!
+    @IBOutlet weak var posterImg: MaterialImageView!
     @IBOutlet weak var filterBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setRec()
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:"posterTapped:")
+        posterImg.userInteractionEnabled = true
+        posterImg.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    func posterTapped(sender: AnyObject) {
+        performSegueWithIdentifier("detailVC", sender: nil)
     }
     
     func setRec() {

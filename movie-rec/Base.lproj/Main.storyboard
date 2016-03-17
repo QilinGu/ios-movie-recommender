@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Movies-->
@@ -171,40 +172,50 @@
                         <outlet property="filterBtn" destination="oFD-kS-7nY" id="eZW-pq-yrP"/>
                         <outlet property="movieTitle" destination="Jnt-MI-NBE" id="DUq-jB-IAO"/>
                         <outlet property="posterConstraint" destination="IVm-gY-9KV" id="f9t-Sj-gmu"/>
+                        <outlet property="posterImg" destination="hYH-ld-14h" id="9B6-ul-Kso"/>
                         <outlet property="posterView" destination="KSq-fL-C9E" id="pff-U1-7Tb"/>
                         <outlet property="recBtn" destination="EbJ-hb-dxF" id="54e-e8-uaj"/>
                         <outlet property="starControl" destination="wsV-1F-fsp" id="CUQ-ii-qqk"/>
                         <outlet property="starView" destination="94y-Iw-6Xf" id="cSb-G7-2sw"/>
-                        <segue destination="Vis-Gh-5Ik" kind="presentation" identifier="detailVC" id="gId-Je-1Sh"/>
+                        <segue destination="Vis-Gh-5Ik" kind="show" identifier="detailVC" id="gId-Je-1Sh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77O-Hc-1q6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="172" y="1231"/>
         </scene>
-        <!--View Controller-->
+        <!--Movie Detail Controller-->
         <scene sceneID="bih-bn-iU4">
             <objects>
-                <viewController id="Vis-Gh-5Ik" sceneMemberID="viewController">
+                <viewController id="Vis-Gh-5Ik" customClass="MovieDetailController" customModule="movie_rec" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sq5-pS-6f4"/>
                         <viewControllerLayoutGuide type="bottom" id="5yd-uD-qU3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YVF-XW-c2B">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOVIE DETAIL VIEW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cl4-b1-7bf">
-                                <rect key="frame" x="222" y="290" width="157" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MOVIE DETAIL VIEW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cl4-b1-7bf">
+                                <rect key="frame" x="222" y="266" width="157" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="La4-Lu-iQA">
+                                <rect key="frame" x="20" y="28" width="46" height="30"/>
+                                <state key="normal" title="BACK"/>
+                                <connections>
+                                    <action selector="backPressed:" destination="Vis-Gh-5Ik" eventType="touchUpInside" id="Z6V-1K-Sal"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.4039215686" green="0.2274509804" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Cl4-b1-7bf" firstAttribute="centerX" secondItem="YVF-XW-c2B" secondAttribute="centerX" id="0NR-nV-ldj"/>
                             <constraint firstItem="Cl4-b1-7bf" firstAttribute="centerY" secondItem="YVF-XW-c2B" secondAttribute="centerY" id="TeG-7J-7Bk"/>
+                            <constraint firstItem="La4-Lu-iQA" firstAttribute="top" secondItem="Sq5-pS-6f4" secondAttribute="bottom" constant="8" id="Xud-3d-rSB"/>
+                            <constraint firstItem="La4-Lu-iQA" firstAttribute="leading" secondItem="YVF-XW-c2B" secondAttribute="leadingMargin" id="t6i-YR-8DE"/>
                         </constraints>
                     </view>
                 </viewController>
