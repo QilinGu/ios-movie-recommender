@@ -28,6 +28,8 @@
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" translatesAutoresizingMaskIntoConstraints="NO" id="jGn-I8-k0h">
                                 <rect key="frame" x="0.0" y="60" width="600" height="491"/>
+                                <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="laI-rN-ihv">
                                 <rect key="frame" x="0.0" y="60" width="600" height="491"/>
@@ -224,7 +226,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="coD-Oq-IK4" secondAttribute="trailing" id="19R-c9-HYM"/>
                             <constraint firstItem="laI-rN-ihv" firstAttribute="leading" secondItem="MWg-WO-jHO" secondAttribute="leading" id="76h-Qt-q1X"/>

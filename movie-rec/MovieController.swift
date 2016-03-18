@@ -145,14 +145,19 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
         })
         UIView.animateWithDuration(totalDuration/2, animations: {
             self.movieTitle.alpha = 0.0
+            self.postBlur.alpha = 0.0
             self.view.layoutIfNeeded()
             }, completion: { finished in
                 self.posterConstraint.constant = self.view.frame.width
                 self.view.layoutIfNeeded()
                 self.posterConstraint.constant = 0
                 //TODO update title and image
+//                self.movieTitle.text = "The Big Lebowski"
+//                self.posterImg.image = UIImage(named: "big")
+//                self.postBlur.image = UIImage(named: "big")
                 UIView.animateWithDuration(totalDuration/2) {
                     self.movieTitle.alpha = 1.0
+                    self.postBlur.alpha = 1.0
                     self.view.layoutIfNeeded()
                 }
             })
