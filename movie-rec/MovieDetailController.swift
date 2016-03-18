@@ -30,7 +30,7 @@ class MovieDetailController: UIViewController, UIWebViewDelegate {
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
-        UIView.animateWithDuration(1.0, animations: {
+        UIView.animateWithDuration(3.0, animations: {
                 self.coverView.alpha = 0.0
                 self.circleLoader.alpha = 0.0
             }, completion: { finished in
