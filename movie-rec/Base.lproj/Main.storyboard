@@ -331,7 +331,21 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUC-SA-p6b">
                                 <rect key="frame" x="0.0" y="60" width="600" height="540"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vZr-HH-kjl" customClass="CircleLoader" customModule="movie_rec" customModuleProvider="target">
+                                        <rect key="frame" x="225" y="195" width="150" height="150"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="tHD-HD-ey8"/>
+                                            <constraint firstAttribute="width" constant="150" id="zlD-Ju-UB9"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="vZr-HH-kjl" firstAttribute="centerY" secondItem="gUC-SA-p6b" secondAttribute="centerY" id="lAy-4d-mRD"/>
+                                    <constraint firstItem="vZr-HH-kjl" firstAttribute="centerX" secondItem="gUC-SA-p6b" secondAttribute="centerX" id="lXb-AF-PZB"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
@@ -353,6 +367,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="circleLoader" destination="vZr-HH-kjl" id="ifd-Yf-Dgb"/>
                         <outlet property="coverView" destination="gUC-SA-p6b" id="HaL-kB-A6w"/>
                         <outlet property="movieLbl" destination="M5f-DK-pYw" id="cbj-NN-hHd"/>
                         <outlet property="webView" destination="TDc-FN-GOB" id="xHg-5J-cYy"/>
