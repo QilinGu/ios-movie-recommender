@@ -16,7 +16,15 @@ class StarControl: UIControl {
     private let numStars: Int = 5
     
     var currentStarCount: CGFloat {
-        return starCount
+        set {
+            if newValue >= 0 && newValue <= 5 {
+                starCount = newValue
+                setNeedsDisplay()
+            }
+        }
+        get {
+            return starCount
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

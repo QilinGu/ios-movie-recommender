@@ -8,7 +8,7 @@
 
 import UIKit
 
-class filterVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FilterController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     var categoryAr = [MovieCategory]()
     

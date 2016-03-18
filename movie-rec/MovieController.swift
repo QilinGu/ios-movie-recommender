@@ -113,7 +113,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if "filterVC" == segue.identifier {
-            if let popoverViewController = segue.destinationViewController as? filterVC {
+            if let popoverViewController = segue.destinationViewController as? FilterController {
                 popoverViewController.popoverPresentationController!.delegate = self
                 let rct = popoverViewController.popoverPresentationController!.sourceRect
                 popoverViewController.popoverPresentationController!.sourceRect = rct.offsetBy(dx: filterBtn.bounds.width / 2.0, dy: filterBtn.bounds.height)
@@ -163,7 +163,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 60.0
+        return 55.0
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
