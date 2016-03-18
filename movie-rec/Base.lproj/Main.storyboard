@@ -349,7 +349,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="vZr-HH-kjl" firstAttribute="centerY" secondItem="gUC-SA-p6b" secondAttribute="centerY" id="lAy-4d-mRD"/>
                                     <constraint firstItem="vZr-HH-kjl" firstAttribute="centerX" secondItem="gUC-SA-p6b" secondAttribute="centerX" id="lXb-AF-PZB"/>
@@ -709,7 +709,7 @@
                                 <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="55" id="pKf-wm-RrZ" customClass="SearchCell" customModule="movie_rec" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="55" id="pKf-wm-RrZ" customClass="SearchCell" customModule="movie_rec" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pKf-wm-RrZ" id="bhI-oa-Ilz">
@@ -770,6 +770,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="nA9-HA-TOk"/>
                     <connections>
+                        <outlet property="searchBar" destination="uFD-Pq-J1k" id="kEh-4S-YYR"/>
                         <outlet property="tableView" destination="sfI-0d-vfw" id="PdI-U7-Arz"/>
                     </connections>
                 </viewController>

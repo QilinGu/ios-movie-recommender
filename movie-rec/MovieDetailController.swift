@@ -14,7 +14,6 @@ class MovieDetailController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var circleLoader: CircleLoader!
     var movieTitle: String!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +29,7 @@ class MovieDetailController: UIViewController, UIWebViewDelegate {
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
-        UIView.animateWithDuration(3.0, animations: {
+        UIView.animateWithDuration(4.0, animations: {
                 self.coverView.alpha = 0.0
                 self.circleLoader.alpha = 0.0
             }, completion: { finished in

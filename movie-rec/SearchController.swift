@@ -8,15 +8,18 @@
 
 import UIKit
 
-class SearchController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SearchController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
     var searchAr = [Search]()
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.OnDrag
+        searchBar.delegate = self
         searchAr.append(Search(movieTitle: "title 1"))
         searchAr.append(Search(movieTitle: "title 2"))
         searchAr.append(Search(movieTitle: "title 3"))
@@ -25,6 +28,10 @@ class SearchController: UIViewController, UITableViewDataSource, UITableViewDele
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        self.view.endEditing(true)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,6 +50,10 @@ class SearchController: UIViewController, UITableViewDataSource, UITableViewDele
         } else {
             return SearchCell()
         }
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
 }
