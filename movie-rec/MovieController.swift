@@ -88,6 +88,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
                 self.starView.alpha = 1.0
                 self.posterView.alpha = 1.0
                 self.recBtn.alpha = 1.0
+                self.postBlur.alpha = 1.0
                 }, completion: { (Bool) -> Void in
                     self.tableView.hidden = true
             })
@@ -99,6 +100,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
                 self.starView.alpha = 0.0
                 self.posterView.alpha = 0.0
                 self.recBtn.alpha = 0.0
+                self.postBlur.alpha = 0.0
                 }, completion: { (Bool) -> Void in
                     self.starView.hidden = true
                     self.posterView.hidden = true

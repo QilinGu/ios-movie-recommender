@@ -97,7 +97,7 @@
                                         </connections>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5qP-qo-Z2D">
-                                        <rect key="frame" x="0.0" y="30" width="600" height="461"/>
+                                        <rect key="frame" x="0.0" y="42" width="600" height="449"/>
                                         <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="similarCell" rowHeight="55" id="AHo-7o-JWh" customClass="SimilarCell" customModule="movie_rec" customModuleProvider="target">
@@ -177,7 +177,7 @@
                                     <constraint firstItem="EbJ-hb-dxF" firstAttribute="top" secondItem="94y-Iw-6Xf" secondAttribute="bottom" constant="12" id="eHu-cl-9Nm"/>
                                     <constraint firstItem="KSq-fL-C9E" firstAttribute="top" secondItem="5qZ-wr-aAG" secondAttribute="bottom" constant="12" id="gbe-bQ-vGu"/>
                                     <constraint firstAttribute="bottom" secondItem="EbJ-hb-dxF" secondAttribute="bottom" constant="12" id="h7r-2H-rvC"/>
-                                    <constraint firstItem="5qP-qo-Z2D" firstAttribute="top" secondItem="5qZ-wr-aAG" secondAttribute="bottom" id="n4y-ye-JLK"/>
+                                    <constraint firstItem="5qP-qo-Z2D" firstAttribute="top" secondItem="5qZ-wr-aAG" secondAttribute="bottom" constant="12" id="n4y-ye-JLK"/>
                                     <constraint firstItem="5qZ-wr-aAG" firstAttribute="top" secondItem="laI-rN-ihv" secondAttribute="top" id="pgh-s1-eof"/>
                                     <constraint firstItem="5qZ-wr-aAG" firstAttribute="leading" secondItem="laI-rN-ihv" secondAttribute="leading" id="z1C-CJ-lSM"/>
                                 </constraints>
