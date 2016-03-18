@@ -112,6 +112,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
                 let rct = popoverViewController.popoverPresentationController!.sourceRect
                 popoverViewController.popoverPresentationController!.sourceRect = rct.offsetBy(dx: filterBtn.bounds.width / 2.0, dy: filterBtn.bounds.height)
                 popoverViewController.popoverPresentationController!.permittedArrowDirections = .Up
+                popoverViewController.popoverPresentationController?.backgroundColor = UIColor(colorLiteralRed: 0.0/255.0, green: 145.0/255.0, blue: 234.0/255.0, alpha: 1.0)
             }
         }
         if "detailVC" == segue.identifier {
