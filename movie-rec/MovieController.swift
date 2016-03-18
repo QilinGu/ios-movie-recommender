@@ -18,6 +18,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
     @IBOutlet weak var posterImg: MaterialImageView!
     @IBOutlet weak var filterBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var postBlur: UIImageView!
     
     var similarAr = [Similar]()
 
@@ -27,6 +28,11 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
         tableView.delegate = self
         tableView.hidden = true
         tableView.alpha = 0.0
+        
+        let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurView = UIVisualEffectView(effect: darkBlur)
+        blurView.frame = self.view.bounds
+        postBlur.addSubview(blurView)
         
         setRec()
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:"posterTapped:")
