@@ -385,10 +385,10 @@
             </objects>
             <point key="canvasLocation" x="-176" y="2024"/>
         </scene>
-        <!--FilterVC-->
+        <!--Filter Controller-->
         <scene sceneID="b5h-ar-gzS">
             <objects>
-                <viewController id="YYh-rt-Vax" customClass="filterVC" customModule="movie_rec" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YYh-rt-Vax" customClass="FilterController" customModule="movie_rec" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="22A-dI-sDg"/>
                         <viewControllerLayoutGuide type="bottom" id="hk5-nd-Ia9"/>
