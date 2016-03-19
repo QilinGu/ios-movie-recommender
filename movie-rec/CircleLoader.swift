@@ -32,7 +32,6 @@ class CircleLoader: UIView {
         circlePathLayer.frame = bounds
         circlePathLayer.lineWidth = circleWidth
         circlePathLayer.fillColor = UIColor.clearColor().CGColor
-        circlePathLayer.strokeColor = UIColor.redColor().CGColor
         layer.addSublayer(circlePathLayer)
         
         var circleFrame = CGRect(x: 0, y: 0, width: self.bounds.width * pct - circleWidth, height: self.bounds.height * pct - circleWidth)

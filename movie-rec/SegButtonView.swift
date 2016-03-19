@@ -10,9 +10,6 @@ import UIKit
 
 @IBDesignable
 class SegButtonView: UIControl {
-    let blueColor = UIColor(colorLiteralRed: 0.0/255.0, green: 145.0/255.0, blue: 234/255.0, alpha: 1.0)
-    let darkColor = UIColor(colorLiteralRed: 33.0/255.0, green: 33.0/255.0, blue: 33.0/255.0, alpha: 1.0)
-    let lightColor = UIColor(colorLiteralRed: 99.0/255.0, green: 99.0/255.0, blue: 99.0/255.0, alpha: 1.0)
     private var leftSelected = true
     var rightLbl: UILabel!
     var leftLbl: UILabel!
@@ -35,16 +32,16 @@ class SegButtonView: UIControl {
         let lRect = CGRectMake(0, 0, width / 2, self.bounds.height)
         leftLbl = UILabel(frame: lRect)
         leftLbl.text = "recommended"
-        leftLbl.textColor = blueColor
-        leftLbl.backgroundColor = darkColor
+        leftLbl.textColor = BLUE_COLOR
+        leftLbl.backgroundColor = DARK_COLOR
         leftLbl.font = UIFont(name: "Helvetica Neue", size: 14.0)
         leftLbl.textAlignment = .Center
         
         let rRect = CGRectMake(width / 2, 0, width / 2, self.bounds.height)
         rightLbl = UILabel(frame: rRect)
         rightLbl.text = "Similar"
-        rightLbl.textColor = lightColor
-        rightLbl.backgroundColor = darkColor
+        rightLbl.textColor = EXTRA_LIGHT_COLOR
+        rightLbl.backgroundColor = DARK_COLOR
         rightLbl.font = UIFont(name: "Helvetica Neue", size: 14.0)
         rightLbl.textAlignment = .Center
         
@@ -57,14 +54,14 @@ class SegButtonView: UIControl {
         if location.x > (self.bounds.width / 2) && leftSelected{
             leftSelected = false
             self.sendActionsForControlEvents(.ValueChanged)
-            rightLbl.textColor = blueColor
-            leftLbl.textColor = lightColor
+            rightLbl.textColor = BLUE_COLOR
+            leftLbl.textColor = EXTRA_LIGHT_COLOR
             return true
         } else if location.x <= (self.bounds.width / 2) && !leftSelected{
             leftSelected = true
             self.sendActionsForControlEvents(.ValueChanged)
-            rightLbl.textColor = lightColor
-            leftLbl.textColor = blueColor
+            rightLbl.textColor = EXTRA_LIGHT_COLOR
+            leftLbl.textColor = BLUE_COLOR
         }
         return true
     }
