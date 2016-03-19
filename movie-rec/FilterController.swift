@@ -38,7 +38,7 @@ class FilterController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cat = categoryAr[indexPath.row]
-        if let cell = tableView.dequeueReusableCellWithIdentifier("categoryCell") as? CategoryCell {
+        if let cell = tableView.dequeueReusableCellWithIdentifier(CATEGORY_CELL_ID) as? CategoryCell {
             cell.configureCell(cat)
             return cell
         } else {

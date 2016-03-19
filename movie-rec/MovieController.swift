@@ -52,7 +52,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
     }
     
     func posterTapped(sender: AnyObject) {
-        performSegueWithIdentifier("detailVC", sender: nil)
+        performSegueWithIdentifier(DETAIL_SEGUE, sender: nil)
     }
     
     func setRec() {
@@ -74,6 +74,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
             //skip
         } else {
             //send review
+            //store rating history
         }
         nextMovie()
     }
@@ -110,11 +111,11 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
     }
     
     @IBAction func filterPressed(sender: AnyObject) {
-        performSegueWithIdentifier("filterVC", sender: nil)
+        performSegueWithIdentifier(FILTER_SEGUE, sender: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if "filterVC" == segue.identifier {
+        if FILTER_SEGUE == segue.identifier {
             if let popoverViewController = segue.destinationViewController as? FilterController {
                 popoverViewController.popoverPresentationController!.delegate = self
                 let rct = popoverViewController.popoverPresentationController!.sourceRect
@@ -123,7 +124,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
                 popoverViewController.popoverPresentationController?.backgroundColor = UIColor(colorLiteralRed: 0.0/255.0, green: 145.0/255.0, blue: 234.0/255.0, alpha: 1.0)
             }
         }
-        if "detailVC" == segue.identifier {
+        if DETAIL_SEGUE == segue.identifier {
             if let destinationVC = segue.destinationViewController as? MovieDetailController {
                 destinationVC.movieTitle = movieTitle.text
             }
@@ -179,7 +180,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let similar = similarAr[indexPath.row]
-        if let cell = tableView.dequeueReusableCellWithIdentifier("similarCell") as? SimilarCell {
+        if let cell = tableView.dequeueReusableCellWithIdentifier(SIMILAR_CELL_ID) as? SimilarCell {
             cell.configureCell(similar)
             return cell
         } else {

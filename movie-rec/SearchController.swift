@@ -44,7 +44,7 @@ class SearchController: UIViewController, UITableViewDataSource, UITableViewDele
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let search = searchAr[indexPath.row]
-        if let cell = tableView.dequeueReusableCellWithIdentifier("searchCell") as? SearchCell {
+        if let cell = tableView.dequeueReusableCellWithIdentifier(SEARCH_CELL_ID) as? SearchCell {
             cell.configureCell(search)
             return cell
         } else {

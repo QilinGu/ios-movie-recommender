@@ -10,6 +10,7 @@
 		A423B4751C9723A0005888E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A423B4741C9723A0005888E4 /* AppDelegate.swift */; };
 		A423B47C1C9723A0005888E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A423B47B1C9723A0005888E4 /* Assets.xcassets */; };
 		A423B47F1C9723A0005888E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A423B47D1C9723A0005888E4 /* LaunchScreen.storyboard */; };
+		A46A45F11C9DB071003CACA0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A45F01C9DB071003CACA0 /* Constants.swift */; };
 		A4B4F5CA1C9B6DBF00DFD022 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B4F5C91C9B6DBF00DFD022 /* CategoryCell.swift */; };
 		A4B4F5CC1C9B6DF400DFD022 /* MovieCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B4F5CB1C9B6DF400DFD022 /* MovieCategory.swift */; };
 		A4C34F7E1C99B97A00DFF6AC /* SegButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C34F7D1C99B97A00DFF6AC /* SegButtonView.swift */; };
@@ -40,6 +41,7 @@
 		A423B47B1C9723A0005888E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A423B47E1C9723A0005888E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A423B4801C9723A0005888E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A46A45F01C9DB071003CACA0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A4B4F5C91C9B6DBF00DFD022 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		A4B4F5CB1C9B6DF400DFD022 /* MovieCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCategory.swift; sourceTree = "<group>"; };
 		A4C34F7D1C99B97A00DFF6AC /* SegButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegButtonView.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		A423B4731C9723A0005888E4 /* movie-rec */ = {
 			isa = PBXGroup;
 			children = (
+				A46A45EF1C9DB04E003CACA0 /* utils */,
 				A4C7B0051C985B3C009CD3A0 /* model */,
 				A4C7B0061C985B42009CD3A0 /* view */,
 				A4C7B0071C985B4F009CD3A0 /* controller */,
@@ -104,6 +107,14 @@
 				A423B4801C9723A0005888E4 /* Info.plist */,
 			);
 			path = "movie-rec";
+			sourceTree = "<group>";
+		};
+		A46A45EF1C9DB04E003CACA0 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				A46A45F01C9DB071003CACA0 /* Constants.swift */,
+			);
+			name = utils;
 			sourceTree = "<group>";
 		};
 		A4C7B0051C985B3C009CD3A0 /* model */ = {
@@ -225,6 +236,7 @@
 				A4B4F5CA1C9B6DBF00DFD022 /* CategoryCell.swift in Sources */,
 				A4C7B0131C988172009CD3A0 /* StarControl.swift in Sources */,
 				A4F46B091C9B48D20081E867 /* SimilarCell.swift in Sources */,
+				A46A45F11C9DB071003CACA0 /* Constants.swift in Sources */,
 				A4D736DA1C9C563500C47BB2 /* CircleLoader.swift in Sources */,
 				A4C7B00F1C9872FB009CD3A0 /* MaterialButtonView.swift in Sources */,
 				A4ED52191C9C7808000209DC /* HistoryController.swift in Sources */,

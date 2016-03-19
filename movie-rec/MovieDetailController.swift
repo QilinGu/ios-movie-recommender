@@ -19,7 +19,7 @@ class MovieDetailController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
         webView.delegate = self
         movieLbl.text = movieTitle
-        let url = NSURL(string: "http://www.imdb.com/title/tt3460252/")!
+        let url = NSURL(string: IMDB_BASE_URL + "tt3460252/")!
         let request = NSURLRequest(URL: url)
         webView.loadRequest(request)
     }

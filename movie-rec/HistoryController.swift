@@ -29,7 +29,7 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let history = historyAr[indexPath.row]
-        if let cell = tableView.dequeueReusableCellWithIdentifier("historyCell") as? HistoryCell {
+        if let cell = tableView.dequeueReusableCellWithIdentifier(HISTORY_CELL_ID) as? HistoryCell {
             cell.configureCell(history)
             return cell
         } else {
