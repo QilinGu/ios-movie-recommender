@@ -39,29 +39,32 @@ print(userMatrix.shape)
 userMatrix = userMatrix.T
 userMatrix = sparse.csr_matrix(userMatrix)
 
-f = file("user_mat.bin","wb")
-np.save(f,userMatrix)
-f.close()
+np.savez('/tmp/userMat.npz', a=userMatrix)
 
 print("starting sim")
 dist = 1 - pairwise_distances(userMatrix, metric="cosine")
 print(dist.shape)
 
-f = file("tmp.bin","wb")
-np.save(f,dist)
-f.close()
+np.savez('/tmp/simMat.npz', a=dist)
+
+data = np.load('/tmp/simMat.npz')
+data = data['a']
+
+srt = np.argsort(data)
+movieList = np.array(movieDict.keys())
+movieSimTop = movieList[srt[:,-101:-1]]
+movieId = movieList[srt[:,-1]]
+
+with open('topSim.csv', 'w') as fp:
+    w = csv.writer(fp, delimiter=',')
+    for row in range(len(movieId)):
+        dataRow = np.append(np.array(movieId[row]), movieSimTop[row,:])
+        w.writerow(dataRow)
 
 
-#similarity = userMatrix.dot(userMatrix.T).todense()
-#square_mag = np.diag(similarity)
-#inv_square_mag = 1 / square_mag
-#inv_square_mag[np.isinf(inv_square_mag)] = 0
-#inv_mag = np.sqrt(inv_square_mag)
-#cosine = similarity * inv_mag
-#cosine = cosine.T * inv_mag
 
-#print(cosine.shape)
 
-#f = file("tmp.bin","wb")
-#np.save(f,cosine)
-#f.close()
+
+
+
+        
