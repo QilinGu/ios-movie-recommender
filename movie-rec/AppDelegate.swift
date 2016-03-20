@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UID == nil {
             let uid = NSUUID().UUIDString
             NSUserDefaults.standardUserDefaults().setValue(uid, forKey: UID_KEY)
-            print(uid)
         }
         return true
     }

@@ -13,6 +13,7 @@
 		A46A45F11C9DB071003CACA0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A45F01C9DB071003CACA0 /* Constants.swift */; };
 		A4B4F5CA1C9B6DBF00DFD022 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B4F5C91C9B6DBF00DFD022 /* CategoryCell.swift */; };
 		A4B4F5CC1C9B6DF400DFD022 /* MovieCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B4F5CB1C9B6DF400DFD022 /* MovieCategory.swift */; };
+		A4B849E81C9DC91E004A3F7C /* movieInfo.csv in Resources */ = {isa = PBXBuildFile; fileRef = A4B849E71C9DC91E004A3F7C /* movieInfo.csv */; };
 		A4C34F7E1C99B97A00DFF6AC /* SegButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C34F7D1C99B97A00DFF6AC /* SegButtonView.swift */; };
 		A4C7B0091C985F47009CD3A0 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7B0081C985F47009CD3A0 /* TabController.swift */; };
 		A4C7B00B1C987077009CD3A0 /* MaterialContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7B00A1C987077009CD3A0 /* MaterialContentView.swift */; };
@@ -44,6 +45,7 @@
 		A46A45F01C9DB071003CACA0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A4B4F5C91C9B6DBF00DFD022 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		A4B4F5CB1C9B6DF400DFD022 /* MovieCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCategory.swift; sourceTree = "<group>"; };
+		A4B849E71C9DC91E004A3F7C /* movieInfo.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = movieInfo.csv; sourceTree = "<group>"; };
 		A4C34F7D1C99B97A00DFF6AC /* SegButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegButtonView.swift; sourceTree = "<group>"; };
 		A4C7B0081C985F47009CD3A0 /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		A4C7B00A1C987077009CD3A0 /* MaterialContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		A423B4731C9723A0005888E4 /* movie-rec */ = {
 			isa = PBXGroup;
 			children = (
+				A4B849E61C9DC90A004A3F7C /* resources */,
 				A46A45EF1C9DB04E003CACA0 /* utils */,
 				A4C7B0051C985B3C009CD3A0 /* model */,
 				A4C7B0061C985B42009CD3A0 /* view */,
@@ -115,6 +118,14 @@
 				A46A45F01C9DB071003CACA0 /* Constants.swift */,
 			);
 			name = utils;
+			sourceTree = "<group>";
+		};
+		A4B849E61C9DC90A004A3F7C /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				A4B849E71C9DC91E004A3F7C /* movieInfo.csv */,
+			);
+			name = resources;
 			sourceTree = "<group>";
 		};
 		A4C7B0051C985B3C009CD3A0 /* model */ = {
@@ -220,6 +231,7 @@
 				A4F46B011C9B2BB00081E867 /* Main.storyboard in Resources */,
 				A423B47F1C9723A0005888E4 /* LaunchScreen.storyboard in Resources */,
 				A423B47C1C9723A0005888E4 /* Assets.xcassets in Resources */,
+				A4B849E81C9DC91E004A3F7C /* movieInfo.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
