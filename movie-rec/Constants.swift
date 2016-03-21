@@ -17,7 +17,7 @@ let CATEGORY_CELL_ID = "categoryCell"
 let SEARCH_CELL_ID = "searchCell"
 let HISTORY_CELL_ID = "historyCell"
 
-let IMDB_BASE_URL = "http://www.imdb.com/title/tt0"
+let IMDB_BASE_URL = "http://www.imdb.com/title/tt"
 
 let API_URL = "https://api.themoviedb.org/3/movie/{0}?api_key=d585fab38c369ab218614ebc8d228d6f"
 let BASE_IMG_URL = "http://image.tmdb.org/t/p/original/"

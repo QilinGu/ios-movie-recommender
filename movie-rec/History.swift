@@ -10,19 +10,19 @@ import Foundation
 import UIKit
 
 class History {
-    private var _movieTitle: String!
+    private var _movie: Movie!
     private var _rating: CGFloat!
     
     var movieTitle: String {
-        return _movieTitle
+        return _movie.title
     }
     
     var rating: CGFloat {
         return _rating
     }
     
-    init(movieTitle: String, rating: CGFloat) {
-        _movieTitle = movieTitle
+    init(movie: Movie, rating: CGFloat) {
+        _movie = movie
         _rating = rating
     }
     

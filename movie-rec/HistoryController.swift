@@ -18,9 +18,9 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
         tableView.dataSource = self
         tableView.delegate = self
         
-        historyAr.append(History(movieTitle: "title 1 title 1 title 1 title 1 title 1", rating: 4.0))
-        historyAr.append(History(movieTitle: "title 2", rating: 0.5))
-        historyAr.append(History(movieTitle: "title 3", rating: 3.5))
+//        historyAr.append(History(movieTitle: "title 1 title 1 title 1 title 1 title 1", rating: 4.0))
+//        historyAr.append(History(movieTitle: "title 2", rating: 0.5))
+//        historyAr.append(History(movieTitle: "title 3", rating: 3.5))
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

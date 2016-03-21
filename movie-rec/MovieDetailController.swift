@@ -20,7 +20,11 @@ class MovieDetailController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
         webView.delegate = self
         movieLbl.text = movie.title
-        let urlString = IMDB_BASE_URL + movie.imdbId + "/"
+        
+        let cnt: Int = max(7 - movie.imdbId.characters.count, 0)
+        let leadingZeros =  String(count: cnt, repeatedValue: Character("0"))
+        let urlString = IMDB_BASE_URL + leadingZeros + movie.imdbId + "/"
+        print(urlString)
         let url = NSURL(string: urlString)!
         let request = NSURLRequest(URL: url)
         webView.loadRequest(request)
