@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class MovieInfo {
     static let instance = MovieInfo()
@@ -50,8 +51,26 @@ class MovieInfo {
         infoAr.removeAtIndex(0)
     }
     
-    func retrieveData() {
-        //TODO
+    func retrieveData(tmdbId: String, completion: (image: UIImage) -> ()) {
+        let urlString = API_URL.stringByReplacingOccurrencesOfString("{0}", withString: tmdbId)
+        if let url = NSURL(string: urlString) {
+            Alamofire.request(.GET, url).responseJSON { response in
+                if let json = response.result.value as? Dictionary<String, AnyObject> {
+                    if let collection = json["belongs_to_collection"] as? Dictionary<String, AnyObject> {
+                        if let postPath = collection["poster_path"] as? String {
+                            Alamofire.request(.GET, BASE_IMG_URL+postPath).response { request, response, data, error in
+                                if let img = UIImage(data: data!) {
+                                    completion(image: img)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
 }
+
+
+

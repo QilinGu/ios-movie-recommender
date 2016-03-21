@@ -13,13 +13,15 @@ class MovieDetailController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var movieLbl: UILabel!
     @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var circleLoader: CircleLoader!
-    var movieTitle: String!
+    
+    var movie: Movie!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.delegate = self
-        movieLbl.text = movieTitle
-        let url = NSURL(string: IMDB_BASE_URL + "tt3460252/")!
+        movieLbl.text = movie.title
+        let urlString = IMDB_BASE_URL + movie.imdbId + "/"
+        let url = NSURL(string: urlString)!
         let request = NSURLRequest(URL: url)
         webView.loadRequest(request)
     }

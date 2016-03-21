@@ -55,9 +55,11 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
     
     override func viewWillAppear(animated: Bool) {
         if let mov = movie {
-            nextMovie(mov)
+            let completionBlock: (img: UIImage) -> () = { img in self.nextMovie(mov, image: img) }
+            MovieInfo.instance.retrieveData(mov.tmdbId, completion: completionBlock)
         }
     }
+    
     
     func posterTapped(sender: AnyObject) {
         performSegueWithIdentifier(DETAIL_SEGUE, sender: nil)
@@ -134,7 +136,8 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
         }
         if DETAIL_SEGUE == segue.identifier {
             if let destinationVC = segue.destinationViewController as? MovieDetailController {
-                destinationVC.movieTitle = movieTitle.text
+                
+                destinationVC.movie = movie
             }
         }
     }
@@ -147,7 +150,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
         return UIModalPresentationStyle.None
     }
     
-    func nextMovie(movie: Movie) {
+    func nextMovie(movie: Movie, image: UIImage) {
         let totalDuration = 0.75
         self.posterConstraint.constant = -self.view.frame.width
         starControl.animateReset(totalDuration)
@@ -162,7 +165,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
                 self.posterConstraint.constant = self.view.frame.width
                 self.view.layoutIfNeeded()
                 self.posterConstraint.constant = 0
-                self.updateMovie(movie)
+                self.updateMovie(movie, image: image)
                 UIView.animateWithDuration(totalDuration/2) {
                     self.movieTitle.alpha = 1.0
                     self.postBlur.alpha = 1.0
@@ -171,10 +174,10 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
             })
     }
     
-    func updateMovie(movie: Movie) {
+    func updateMovie(movie: Movie, image: UIImage) {
         self.movieTitle.text = movie.formattedTitle
-//      self.posterImg.image = UIImage(named: "big")
-//      self.postBlur.image = UIImage(named: "big")
+        self.posterImg.image = image
+        self.postBlur.image = image
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

@@ -1,0 +1,6 @@
+framework module Pods_movie_rec {
+  umbrella header "Pods-movie-rec-umbrella.h"
+
+  export *
+  module * { export * }
+}

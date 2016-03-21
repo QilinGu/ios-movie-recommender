@@ -69,11 +69,7 @@ class SearchController: UIViewController, UITableViewDataSource, UITableViewDele
         if let destination = tabBarController!.viewControllers![1] as? MovieController {
             destination.movie = cell
         }
-        
-        
         tabBarController!.selectedIndex = 1
-        print(cell.title)
-        
     }
 
 }
