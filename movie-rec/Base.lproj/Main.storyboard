@@ -315,6 +315,7 @@
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="9Cf-vg-fAb"/>
+                                                <exclude reference="FbP-ZT-k1g"/>
                                             </mask>
                                         </variation>
                                     </label>
@@ -322,10 +323,12 @@
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="403-WM-5S2"/>
+                                    <constraint firstAttribute="trailing" secondItem="M5f-DK-pYw" secondAttribute="trailing" constant="75" id="BSy-lH-4fS"/>
                                     <constraint firstItem="vIy-aF-big" firstAttribute="centerY" secondItem="s5j-3B-vir" secondAttribute="centerY" id="KL4-1Y-SM9"/>
                                     <constraint firstItem="vIy-aF-big" firstAttribute="leading" secondItem="s5j-3B-vir" secondAttribute="leading" constant="8" id="Uj7-NJ-b22"/>
                                     <constraint firstItem="M5f-DK-pYw" firstAttribute="top" secondItem="s5j-3B-vir" secondAttribute="top" constant="4" id="bxJ-DF-48t"/>
                                     <constraint firstItem="M5f-DK-pYw" firstAttribute="centerX" secondItem="s5j-3B-vir" secondAttribute="centerX" id="hDo-V6-1rt"/>
+                                    <constraint firstItem="M5f-DK-pYw" firstAttribute="leading" secondItem="s5j-3B-vir" secondAttribute="leading" constant="75" id="l9d-sw-cwz"/>
                                     <constraint firstAttribute="trailing" secondItem="M5f-DK-pYw" secondAttribute="trailing" constant="40" id="lqc-aM-jOy"/>
                                     <constraint firstItem="M5f-DK-pYw" firstAttribute="leading" secondItem="vIy-aF-big" secondAttribute="trailing" id="qCs-Y1-RfB"/>
                                     <constraint firstItem="M5f-DK-pYw" firstAttribute="leading" secondItem="s5j-3B-vir" secondAttribute="leading" constant="40" id="qMX-GG-QX4"/>

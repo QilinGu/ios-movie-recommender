@@ -56,17 +56,37 @@ class MovieInfo {
         if let url = NSURL(string: urlString) {
             Alamofire.request(.GET, url).responseJSON { response in
                 if let json = response.result.value as? Dictionary<String, AnyObject> {
-                    if let collection = json["belongs_to_collection"] as? Dictionary<String, AnyObject> {
-                        if let postPath = collection["poster_path"] as? String {
-                            Alamofire.request(.GET, BASE_IMG_URL+postPath).response { request, response, data, error in
-                                if let img = UIImage(data: data!) {
-                                    completion(image: img)
-                                }
+                    if let postPath = json["poster_path"] as? String {
+                        Alamofire.request(.GET, BASE_IMG_URL+postPath).response { request, response, data, error in
+                            if let img = UIImage(data: data!) {
+                                completion(image: img)
+                            } else {
+                                print("could not load image from data")
                             }
                         }
+                    } else {
+                        if let collection = json["belongs_to_collection"] as? Dictionary<String, AnyObject> {
+                            if let postPath = collection["poster_path"] as? String {
+                                Alamofire.request(.GET, BASE_IMG_URL+postPath).response { request, response, data, error in
+                                    if let img = UIImage(data: data!) {
+                                        completion(image: img)
+                                    } else {
+                                        print("could not load image from data")
+                                    }
+                                }
+                            } else {
+                                print("could not parse collection json")
+                            }
+                        } else {
+                            print("could not parse json")
+                        }
                     }
+                } else {
+                    print("could not parse response")
                 }
             }
+        } else {
+            print(urlString)
         }
     }
     

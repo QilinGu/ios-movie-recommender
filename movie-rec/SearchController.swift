@@ -68,6 +68,7 @@ class SearchController: UIViewController, UITableViewDataSource, UITableViewDele
         let cell = searchAr[indexPath.row]
         if let destination = tabBarController!.viewControllers![1] as? MovieController {
             destination.movie = cell
+            destination.seg = true
         }
         tabBarController!.selectedIndex = 1
     }

@@ -22,6 +22,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
     
     var similarAr = [Similar]()
     var movie: Movie?
+    var seg = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,10 +55,13 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
     }
     
     override func viewWillAppear(animated: Bool) {
-        if let mov = movie {
-            let completionBlock: (img: UIImage) -> () = { img in self.nextMovie(mov, image: img) }
-            MovieInfo.instance.retrieveData(mov.tmdbId, completion: completionBlock)
+        if seg {
+            if let mov = movie {
+                let completionBlock: (img: UIImage) -> () = { img in self.nextMovie(mov, image: img) }
+                MovieInfo.instance.retrieveData(mov.tmdbId, completion: completionBlock)
+            }
         }
+        seg = false
     }
     
     
