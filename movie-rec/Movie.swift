@@ -19,6 +19,10 @@ class Movie {
         return _title
     }
     
+    var imdbId: String {
+        return _imdbId
+    }
+    
     init(movieId: String, title: String, genres: String, imdbId: String, tmdbId: String) {
         _movieId = movieId
         _title = title

@@ -11,6 +11,7 @@ import UIKit
 class SearchController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
     var searchAr = [Movie]()
+    var movieAr = MovieInfo.instance.movieList
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -20,7 +21,6 @@ class SearchController: UIViewController, UITableViewDataSource, UITableViewDele
         tableView.dataSource = self
         tableView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.OnDrag
         searchBar.delegate = self
-        searchAr = MovieInfo.instance.movieList
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -28,7 +28,11 @@ class SearchController: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        if let text = searchBar.text {
+            searchAr = movieAr.filter({$0.title.lowercaseString.rangeOfString(text.lowercaseString) != nil})
+        }
         self.view.endEditing(true)
+        tableView.reloadData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,6 +55,18 @@ class SearchController: UIViewController, UITableViewDataSource, UITableViewDele
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == "" {
+            searchAr = []
+            tableView.reloadData()
+        }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = searchAr[indexPath.row]
+        print(cell.title)
     }
 
 }
