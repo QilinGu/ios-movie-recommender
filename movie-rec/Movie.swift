@@ -19,6 +19,14 @@ class Movie {
         return _title
     }
     
+    var formattedTitle: String {
+        return _title
+    }
+    
+    var tmdbId: String {
+        return _tmdbId
+    }
+    
     var imdbId: String {
         return _imdbId
     }

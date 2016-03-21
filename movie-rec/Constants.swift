@@ -19,6 +19,8 @@ let HISTORY_CELL_ID = "historyCell"
 
 let IMDB_BASE_URL = "http://www.imdb.com/title/"
 
+let API_KEY = "d585fab38c369ab218614ebc8d228d6f"
+
 let BLUE_COLOR = UIColor(colorLiteralRed: 0.0/255.0, green: 145.0/255.0, blue: 234/255.0, alpha: 1.0)
 let DARK_COLOR = UIColor(colorLiteralRed: 33.0/255.0, green: 33.0/255.0, blue: 33.0/255.0, alpha: 1.0)
 let EXTRA_LIGHT_COLOR = UIColor(colorLiteralRed: 99.0/255.0, green: 99.0/255.0, blue: 99.0/255.0, alpha: 1.0)

@@ -50,4 +50,8 @@ class MovieInfo {
         infoAr.removeAtIndex(0)
     }
     
+    func retrieveData() {
+        //TODO
+    }
+    
 }

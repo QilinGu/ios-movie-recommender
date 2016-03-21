@@ -21,6 +21,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
     @IBOutlet weak var postBlur: UIImageView!
     
     var similarAr = [Similar]()
+    var movie: Movie?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +53,12 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
         similarAr.append(Similar(index: 10, title: "title ten"))
     }
     
+    override func viewWillAppear(animated: Bool) {
+        if let mov = movie {
+            nextMovie(mov)
+        }
+    }
+    
     func posterTapped(sender: AnyObject) {
         performSegueWithIdentifier(DETAIL_SEGUE, sender: nil)
     }
@@ -77,7 +84,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
             //send review
             //store rating history
         }
-        nextMovie()
+        //nextMovie()
     }
     
     @IBAction func segPressed(sender: SegButtonView) {
@@ -140,7 +147,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
         return UIModalPresentationStyle.None
     }
     
-    func nextMovie() {
+    func nextMovie(movie: Movie) {
         let totalDuration = 0.75
         self.posterConstraint.constant = -self.view.frame.width
         starControl.animateReset(totalDuration)
@@ -155,16 +162,19 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
                 self.posterConstraint.constant = self.view.frame.width
                 self.view.layoutIfNeeded()
                 self.posterConstraint.constant = 0
-                //TODO update title and image
-//                self.movieTitle.text = "The Big Lebowski"
-//                self.posterImg.image = UIImage(named: "big")
-//                self.postBlur.image = UIImage(named: "big")
+                self.updateMovie(movie)
                 UIView.animateWithDuration(totalDuration/2) {
                     self.movieTitle.alpha = 1.0
                     self.postBlur.alpha = 1.0
                     self.view.layoutIfNeeded()
                 }
             })
+    }
+    
+    func updateMovie(movie: Movie) {
+        self.movieTitle.text = movie.formattedTitle
+//      self.posterImg.image = UIImage(named: "big")
+//      self.postBlur.image = UIImage(named: "big")
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
