@@ -23,8 +23,8 @@ class SearchCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(search: Search) {
-        movieLbl.text = search.movieTitle
+    func configureCell(movie: Movie) {
+        movieLbl.text = movie.title
     }
 
 }

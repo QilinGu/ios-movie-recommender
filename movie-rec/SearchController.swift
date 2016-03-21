@@ -10,7 +10,7 @@ import UIKit
 
 class SearchController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
-    var searchAr = [Search]()
+    var searchAr = [Movie]()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -20,10 +20,7 @@ class SearchController: UIViewController, UITableViewDataSource, UITableViewDele
         tableView.dataSource = self
         tableView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.OnDrag
         searchBar.delegate = self
-        searchAr.append(Search(movieTitle: "title 1"))
-        searchAr.append(Search(movieTitle: "title 2"))
-        searchAr.append(Search(movieTitle: "title 3"))
-        searchAr.append(Search(movieTitle: "title 4"))
+        searchAr = MovieInfo.instance.movieList
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
