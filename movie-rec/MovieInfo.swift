@@ -13,13 +13,23 @@ class MovieInfo {
     static let instance = MovieInfo()
     
     private var infoAr = [Movie]()
+    private var _historySet = Dictionary<History, CGFloat>()
     
     var movieList: [Movie] {
         return infoAr
     }
     
+    var historyList: [History] {
+        return Array(_historySet.keys)
+    }
+    
+    var historySet: Dictionary<History, CGFloat> {
+        return _historySet
+    }
+    
     init() {
         movieTitles()
+        loadHistory()
     }
     
     func movieTitles() {
@@ -49,6 +59,29 @@ class MovieInfo {
             print("no path")
         }
         infoAr.removeAtIndex(0)
+    }
+    
+    func loadHistory() {
+        let documentDirectoryURL = try! NSFileManager.defaultManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: false)
+        let historyUrl = documentDirectoryURL.URLByAppendingPathComponent(HISTORY_FILE_NAME)
+        
+        _historySet = [:]
+        if let resAr: [History] = NSKeyedUnarchiver.unarchiveObjectWithFile(historyUrl.path!) as? [History] {
+            for item in resAr {
+                _historySet[item] = item.rating
+            }
+        }
+    }
+    
+    func saveHistory() {
+        let documentDirectoryURL = try! NSFileManager.defaultManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
+        let historyUrl = documentDirectoryURL.URLByAppendingPathComponent(HISTORY_FILE_NAME)
+        let result = NSKeyedArchiver.archiveRootObject(historyList, toFile: historyUrl.path!)
+        print("saving data worked: \(result)")
+    }
+    
+    func addReview(movie: History) {
+        _historySet[movie] = movie.rating
     }
     
     func retrieveData(tmdbId: String, completion: (image: UIImage) -> ()) {
