@@ -84,6 +84,10 @@ class MovieInfo {
         _historySet[movie] = movie.rating
     }
     
+    func removeReview(movie: History) {
+        _historySet.removeValueForKey(movie)
+    }
+    
     func retrieveData(tmdbId: String, completion: (image: UIImage) -> ()) {
         let urlString = API_URL.stringByReplacingOccurrencesOfString("{0}", withString: tmdbId)
         if let url = NSURL(string: urlString) {

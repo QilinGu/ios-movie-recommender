@@ -54,5 +54,14 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         tabBarController!.selectedIndex = MOVIE_TAB_INDEX
     }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            let cell = historyAr[indexPath.row]
+            MovieInfo.instance.removeReview(cell)
+            historyAr = MovieInfo.instance.historyList
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
 
 }
