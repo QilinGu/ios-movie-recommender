@@ -22,6 +22,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
     
     var similarAr = [Similar]()
     var movie: Movie?
+    var history: History?
     var seg = false
 
     override func viewDidLoad() {
@@ -56,14 +57,29 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
     
     override func viewWillAppear(animated: Bool) {
         if seg {
-            if let mov = movie {
-                let completionBlock: (img: UIImage) -> () = { img in self.nextMovie(mov, image: img) }
-                MovieInfo.instance.retrieveData(mov.tmdbId, completion: completionBlock)
+            if let hist = history {
+                movie = hist.movie
+                let completionBlock: (img: UIImage) -> () = { img in
+                    self.nextMovie(hist.movie, image: img, resetStar: false)
+                    self.starControl.currentStarCount = hist.rating
+                }
+                MovieInfo.instance.retrieveData(hist.movie.tmdbId, completion: completionBlock)
+                history = nil
+            } else {
+                if let mov = movie {
+                    if MovieInfo.instance.historySet[History(movie: mov, rating: 0.0)] != nil {
+                        let completionBlock: (img: UIImage) -> () = { img in self.nextMovie(mov, image: img, resetStar: false) }
+                        MovieInfo.instance.retrieveData(mov.tmdbId, completion: completionBlock)
+                        self.starControl.currentStarCount = MovieInfo.instance.historySet[History(movie: mov, rating: 0.0)]!
+                    } else {
+                        let completionBlock: (img: UIImage) -> () = { img in self.nextMovie(mov, image: img, resetStar: true) }
+                        MovieInfo.instance.retrieveData(mov.tmdbId, completion: completionBlock)
+                    }
+                }
             }
         }
         seg = false
     }
-    
     
     func posterTapped(sender: AnyObject) {
         performSegueWithIdentifier(DETAIL_SEGUE, sender: nil)
@@ -88,7 +104,9 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
             //skip
         } else {
             //send review
-            //store rating history
+            if let movie = movie {
+                MovieInfo.instance.addReview(History(movie: movie, rating: starControl.currentStarCount))
+            }
         }
         //nextMovie()
     }
@@ -140,7 +158,6 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
         }
         if DETAIL_SEGUE == segue.identifier {
             if let destinationVC = segue.destinationViewController as? MovieDetailController {
-                
                 destinationVC.movie = movie
             }
         }
@@ -154,13 +171,15 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
         return UIModalPresentationStyle.None
     }
     
-    func nextMovie(movie: Movie, image: UIImage) {
+    func nextMovie(movie: Movie, image: UIImage, resetStar: Bool) {
         let totalDuration = 0.75
         self.posterConstraint.constant = -self.view.frame.width
-        starControl.animateReset(totalDuration)
-        UIView.animateWithDuration(totalDuration, animations: {
+        if resetStar {
+            starControl.animateReset(totalDuration)
+            UIView.animateWithDuration(totalDuration, animations: {
                 self.recBtn.alpha = 0.7
-        })
+            })
+        }
         UIView.animateWithDuration(totalDuration/2, animations: {
             self.movieTitle.alpha = 0.0
             self.postBlur.alpha = 0.0

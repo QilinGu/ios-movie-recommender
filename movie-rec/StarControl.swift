@@ -19,6 +19,7 @@ class StarControl: UIControl {
         set {
             if newValue >= 0 && newValue <= 5 {
                 starCount = newValue
+                self.sendActionsForControlEvents(.ValueChanged)
                 setNeedsDisplay()
             }
         }

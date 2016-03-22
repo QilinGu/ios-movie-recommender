@@ -148,10 +148,10 @@
 		A4C7B0051C985B3C009CD3A0 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				A4BB6FD71CA04542001702C5 /* MovieInfo.swift */,
 				A4F46B061C9B48A70081E867 /* Similar.swift */,
 				A4B4F5CB1C9B6DF400DFD022 /* MovieCategory.swift */,
 				A4D736E11C9C763800C47BB2 /* History.swift */,
-				A4BB6FD71CA04542001702C5 /* MovieInfo.swift */,
 				A4BB6FD91CA05349001702C5 /* Movie.swift */,
 			);
 			name = model;

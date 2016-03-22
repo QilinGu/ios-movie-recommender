@@ -17,10 +17,11 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        
-//        historyAr.append(History(movieTitle: "title 1 title 1 title 1 title 1 title 1", rating: 4.0))
-//        historyAr.append(History(movieTitle: "title 2", rating: 0.5))
-//        historyAr.append(History(movieTitle: "title 3", rating: 3.5))
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        historyAr = MovieInfo.instance.historyList
+        tableView.reloadData()
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -43,6 +44,15 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return historyAr.count
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = historyAr[indexPath.row]
+        if let destination = tabBarController!.viewControllers![1] as? MovieController {
+            destination.history = cell
+            destination.seg = true
+        }
+        tabBarController!.selectedIndex = MOVIE_TAB_INDEX
     }
 
 }

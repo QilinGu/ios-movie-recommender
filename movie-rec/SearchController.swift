@@ -58,7 +58,6 @@ class SearchController: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        //dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {}
         if searchBar.text == nil || searchBar.text == "" {
             searchAr = []
             tableView.reloadData()
@@ -71,7 +70,7 @@ class SearchController: UIViewController, UITableViewDataSource, UITableViewDele
             destination.movie = cell
             destination.seg = true
         }
-        tabBarController!.selectedIndex = 1
+        tabBarController!.selectedIndex = MOVIE_TAB_INDEX
     }
 
 }
