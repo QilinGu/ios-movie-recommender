@@ -23,7 +23,9 @@ class FilterController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func setCategories() {
-        for cat in MovieInfo.instance.categoryList {
+        var catList = MovieInfo.instance.categoryList
+        catList = catList.sort { $0 < $1 }
+        for cat in  catList {
             categoryAr.append(MovieCategory(tag: cat, state: true))
         }
         tableView.reloadData()
