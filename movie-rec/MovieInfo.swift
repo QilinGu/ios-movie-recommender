@@ -12,24 +12,30 @@ import Alamofire
 class MovieInfo {
     static let instance = MovieInfo()
     
-    private var infoAr = [Movie]()
-    private var _historySet = Dictionary<History, CGFloat>()
+    private var _infoAr = [Movie]()
+    private var _historyDict = Dictionary<History, CGFloat>()
+    private var _categories = Dictionary<String, Bool>()
     
     var movieList: [Movie] {
-        return infoAr
+        return _infoAr
     }
     
     var historyList: [History] {
-        return Array(_historySet.keys)
+        return Array(_historyDict.keys)
     }
     
     var historySet: Dictionary<History, CGFloat> {
-        return _historySet
+        return _historyDict
+    }
+    
+    var categoryList: [String] {
+        return Array(_categories.keys)
     }
     
     init() {
         movieTitles()
         loadHistory()
+        loadcategories()
     }
     
     func movieTitles() {
@@ -45,11 +51,11 @@ class MovieInfo {
                         let title = doubleQuote[1..<doubleQuote.count-1]
                         var col = (doubleQuote[0] + doubleQuote[doubleQuote.count-1]).componentsSeparatedByString(",")
                         col[1] = title.joinWithSeparator("")
-                        infoAr.append(Movie(movieId: col[0], title: col[1], genres: col[2], imdbId: col[3], tmdbId: col[4]))
+                        _infoAr.append(Movie(movieId: col[0], title: col[1], genres: col[2], imdbId: col[3], tmdbId: col[4]))
                         
                     } else {
                         let col = row.componentsSeparatedByString(",")
-                        infoAr.append(Movie(movieId: col[0], title: col[1], genres: col[2], imdbId: col[3], tmdbId: col[4]))
+                        _infoAr.append(Movie(movieId: col[0], title: col[1], genres: col[2], imdbId: col[3], tmdbId: col[4]))
                     }
                 }
             } catch let error as NSError {
@@ -58,17 +64,27 @@ class MovieInfo {
         } else {
             print("no path")
         }
-        infoAr.removeAtIndex(0)
+        _infoAr.removeAtIndex(0)
     }
     
     func loadHistory() {
         let documentDirectoryURL = try! NSFileManager.defaultManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: false)
         let historyUrl = documentDirectoryURL.URLByAppendingPathComponent(HISTORY_FILE_NAME)
         
-        _historySet = [:]
+        _historyDict = [:]
         if let resAr: [History] = NSKeyedUnarchiver.unarchiveObjectWithFile(historyUrl.path!) as? [History] {
             for item in resAr {
-                _historySet[item] = item.rating
+                _historyDict[item] = item.rating
+            }
+        }
+    }
+    
+    func loadcategories() {
+        for movie in _infoAr {
+            for cat in movie.genres {
+                if cat != "(no genres listed)" {
+                    _categories[cat] = true
+                }
             }
         }
     }
@@ -81,11 +97,11 @@ class MovieInfo {
     }
     
     func addReview(movie: History) {
-        _historySet[movie] = movie.rating
+        _historyDict[movie] = movie.rating
     }
     
     func removeReview(movie: History) {
-        _historySet.removeValueForKey(movie)
+        _historyDict.removeValueForKey(movie)
     }
     
     func retrieveData(tmdbId: String, completion: (image: UIImage) -> ()) {

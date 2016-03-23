@@ -19,9 +19,14 @@ class FilterController: UIViewController, UITableViewDelegate, UITableViewDataSo
         tableView.layer.cornerRadius = 7.0
         tableView.clipsToBounds = true
         
-        categoryAr.append(MovieCategory(tag: "Comedy", state: true))
-        categoryAr.append(MovieCategory(tag: "Comedy", state: true))
-        categoryAr.append(MovieCategory(tag: "Comedy", state: true))
+        setCategories()
+    }
+    
+    func setCategories() {
+        for cat in MovieInfo.instance.categoryList {
+            categoryAr.append(MovieCategory(tag: cat, state: true))
+        }
+        tableView.reloadData()
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

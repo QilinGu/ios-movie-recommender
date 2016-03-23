@@ -38,6 +38,10 @@ class Movie: NSObject, NSCoding {
         return _imdbId
     }
     
+    var genres: [String] {
+        return _genres
+    }
+    
     override var hashValue: Int {
         return (31 &* _tmdbId.hashValue)
     }
