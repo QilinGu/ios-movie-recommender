@@ -97,7 +97,7 @@ class StarControl: UIControl {
         let transitionOptions = UIViewAnimationOptions.TransitionFlipFromLeft
         let empty = UIImage(named: "star-empty-gold")
         
-        for var i = starAr.count - 1; i >= 0; i -= 1 {
+        for i in (0..<starAr.count).reverse() {
             let dest = UIImageView(frame: starAr[i].frame)
             dest.image = empty
             UIView.animateWithDuration(duration, delay: 0.0, options: transitionOptions, animations: { () -> Void in
@@ -109,6 +109,5 @@ class StarControl: UIControl {
             })
         }
     }
-
-
+    
 }

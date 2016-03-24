@@ -13,10 +13,9 @@ package = 'Movie'
 class MovieId(messages.Message):
   items = messages.StringField(1, repeated=True)
 
-collection =  MovieId(items=[
-  'hello world!',
-  'goodbye world!',
-])
+
+strLst = [  'hello world!', 'goodbye world!',]
+collection =  MovieId(items=strLst)
 
 @endpoints.api(name='movierec', version='v1')
 class MovieApi(remote.Service):
