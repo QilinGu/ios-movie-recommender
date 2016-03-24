@@ -39,7 +39,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
         postBlur.addSubview(blurView)
         
         setRec()
-        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:"posterTapped:")
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(MovieController.posterTapped(_:)))
         posterImg.userInteractionEnabled = true
         posterImg.addGestureRecognizer(tapGestureRecognizer)
         
