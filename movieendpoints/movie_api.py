@@ -5,6 +5,7 @@
 """appcfg.py update helloendpoints"""
 """https://stately-forest-126023.appspot.com/_ah/api/movierec/v1/similarMovie/5"""
 """https://stately-forest-126023.appspot.com/_ah/api/movierec/v1/movieRec/5"""
+"""source venv/bin/activate"""
 
 import endpoints
 from protorpc import messages
