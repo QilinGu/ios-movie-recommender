@@ -40,6 +40,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
         postBlur.addSubview(blurView)
         
         setRec()
+        genRec()
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(MovieController.posterTapped(_:)))
         posterImg.userInteractionEnabled = true
         posterImg.addGestureRecognizer(tapGestureRecognizer)
@@ -111,10 +112,14 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
                 MovieInfo.instance.addReview(History(movie: movie, rating: starControl.currentStarCount))
             }
         }
-        
+        genRec()
+    }
+    
+    func genRec() {
         let completionBlock: (mov: Movie) -> () = { mov in
             let completionBlock: (img: UIImage) -> () = { img in
-                self.nextMovie(mov, image: img, resetStar: false)
+                //TODO DON'T RESET STAR IF IN HISTORY
+                self.nextMovie(mov, image: img, resetStar: true)
             }
             MovieInfo.instance.retrieveData(mov.tmdbId, completion: completionBlock)
         }
@@ -182,6 +187,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
     }
     
     func nextMovie(movie: Movie, image: UIImage, resetStar: Bool) {
+        self.movie = movie
         let totalDuration = 0.75
         self.posterConstraint.constant = -self.view.frame.width
         if resetStar {
