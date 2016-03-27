@@ -68,6 +68,8 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
             }
         }
         if let mov = movie {
+            similarAr = []
+            self.tableView.reloadData()
             let completionBlock: (movieAr: Array<Similar>) -> () = { ar in
                 self.similarAr = ar
                 self.tableView.reloadData()
