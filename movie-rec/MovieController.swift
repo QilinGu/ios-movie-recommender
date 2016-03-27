@@ -111,7 +111,14 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
                 MovieInfo.instance.addReview(History(movie: movie, rating: starControl.currentStarCount))
             }
         }
-        //nextMovie()
+        
+        let completionBlock: (mov: Movie) -> () = { mov in
+            let completionBlock: (img: UIImage) -> () = { img in
+                self.nextMovie(mov, image: img, resetStar: false)
+            }
+            MovieInfo.instance.retrieveData(mov.tmdbId, completion: completionBlock)
+        }
+        MovieInfo.instance.getRec(completionBlock)
     }
     
     @IBAction func segPressed(sender: SegButtonView) {

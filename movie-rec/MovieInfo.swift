@@ -58,6 +58,19 @@ class MovieInfo {
         })
     }
     
+    func getRec(completionBlock: (mov: Movie) -> ()) {
+        let urlStr = REC_API_URL_BASE + "2"
+        Alamofire.request(.GET, urlStr).responseJSON(completionHandler: { response in
+            if let json = response.result.value as? Dictionary<String, AnyObject> {
+                if let movieId = json["movieId"] as? String {
+                    if let mov = self._movieIdDict[movieId] {
+                        completionBlock(mov: mov)
+                    }
+                }
+            }
+        })
+    }
+    
     func movieTitles() {
         if let path = NSBundle.mainBundle().pathForResource("movieInfo", ofType: "csv") {
             do {
