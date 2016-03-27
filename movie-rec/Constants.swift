@@ -23,6 +23,7 @@ let API_URL = "https://api.themoviedb.org/3/movie/{0}?api_key=d585fab38c369ab218
 let BASE_IMG_URL = "http://image.tmdb.org/t/p/original/"
 
 let SIM_API_URL_BASE = "https://stately-forest-126023.appspot.com/_ah/api/movierec/v1/similarMovie/"
+let REC_API_URL_BASE = "https://stately-forest-126023.appspot.com/_ah/api/movierec/v1/movieRec/"
 
 let BLUE_COLOR = UIColor(colorLiteralRed: 0.0/255.0, green: 145.0/255.0, blue: 234/255.0, alpha: 1.0)
 let DARK_COLOR = UIColor(colorLiteralRed: 33.0/255.0, green: 33.0/255.0, blue: 33.0/255.0, alpha: 1.0)

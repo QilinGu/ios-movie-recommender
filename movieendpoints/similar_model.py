@@ -20,5 +20,5 @@ def getSimilar(movieId):
 
 #movieId is an int
 def getRec(movieId):
-	return MovieRec(movieId="12345")
+	return MovieRec(movieId='5')
 
