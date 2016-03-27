@@ -49,7 +49,7 @@ class SegButtonView: UIControl {
         
         let rRect = CGRectMake(width / 2, 0, width / 2, self.bounds.height)
         rightLbl = UILabel(frame: rRect)
-        rightLbl.text = "Similar"
+        rightLbl.text = "similar" 
         rightLbl.textColor = EXTRA_LIGHT_COLOR
         rightLbl.backgroundColor = DARK_COLOR
         rightLbl.font = UIFont(name: "Helvetica Neue", size: 14.0)
