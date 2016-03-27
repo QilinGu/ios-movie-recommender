@@ -42,7 +42,7 @@ class MovieInfo {
     func getSimilarAr(movie: Movie, completion: (movieAr: Array<Similar>) -> ()) {
         var result = [Similar]()
         let id = movie.movieId
-        let urlStr = "https://stately-forest-126023.appspot.com/_ah/api/movierec/v1/similarMovie/\(id)"
+        let urlStr = SIM_API_URL_BASE + "\(id)"
         Alamofire.request(.GET, urlStr).responseJSON(completionHandler: { response in
             if let json = response.result.value as? Dictionary<String, AnyObject> {
                 if let ar = json["items"] as? Array<String> {
