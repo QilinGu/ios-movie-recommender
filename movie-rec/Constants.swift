@@ -26,9 +26,6 @@ let BLUE_COLOR = UIColor(colorLiteralRed: 0.0/255.0, green: 145.0/255.0, blue: 2
 let DARK_COLOR = UIColor(colorLiteralRed: 33.0/255.0, green: 33.0/255.0, blue: 33.0/255.0, alpha: 1.0)
 let EXTRA_LIGHT_COLOR = UIColor(colorLiteralRed: 99.0/255.0, green: 99.0/255.0, blue: 99.0/255.0, alpha: 1.0)
 
-let UID_KEY = "UID_KEY"
-let UID = NSUserDefaults.standardUserDefaults().valueForKey(UID_KEY) as? String
-
 let HISTORY_FILE_NAME = "history.txt"
 
 let MOVIE_TAB_INDEX = 1

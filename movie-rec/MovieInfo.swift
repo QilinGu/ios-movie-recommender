@@ -15,6 +15,7 @@ class MovieInfo {
     private var _infoAr = [Movie]()
     private var _historyDict = Dictionary<History, CGFloat>()
     private var _categories = Dictionary<String, Bool>()
+    private var _movieIdDict = Dictionary<String, Movie>()
     
     var movieList: [Movie] {
         return _infoAr
@@ -38,6 +39,25 @@ class MovieInfo {
         loadcategories()
     }
     
+    func getSimilarAr(movie: Movie, completion: (movieAr: Array<Similar>) -> ()) {
+        var result = [Similar]()
+        let id = movie.movieId
+        let urlStr = "https://stately-forest-126023.appspot.com/_ah/api/movierec/v1/similarMovie/\(id)"
+        Alamofire.request(.GET, urlStr).responseJSON(completionHandler: { response in
+            if let json = response.result.value as? Dictionary<String, AnyObject> {
+                if let ar = json["items"] as? Array<String> {
+                    for i in 0...10 {
+                        let movieId = ar[i]
+                        if let mov = self._movieIdDict[movieId] {
+                            result.append(Similar(index: i+1, movie: mov))
+                        }
+                    }
+                    completion(movieAr: result)
+                }
+            }
+        })
+    }
+    
     func movieTitles() {
         if let path = NSBundle.mainBundle().pathForResource("movieInfo", ofType: "csv") {
             do {
@@ -51,11 +71,15 @@ class MovieInfo {
                         let title = doubleQuote[1..<doubleQuote.count-1]
                         var col = (doubleQuote[0] + doubleQuote[doubleQuote.count-1]).componentsSeparatedByString(",")
                         col[1] = title.joinWithSeparator("")
-                        _infoAr.append(Movie(movieId: col[0], title: col[1], genres: col[2], imdbId: col[3], tmdbId: col[4]))
+                        let mov = Movie(movieId: col[0], title: col[1], genres: col[2], imdbId: col[3], tmdbId: col[4])
+                        _movieIdDict[mov.movieId] = mov
+                        _infoAr.append(mov)
                         
                     } else {
                         let col = row.componentsSeparatedByString(",")
-                        _infoAr.append(Movie(movieId: col[0], title: col[1], genres: col[2], imdbId: col[3], tmdbId: col[4]))
+                        let mov = Movie(movieId: col[0], title: col[1], genres: col[2], imdbId: col[3], tmdbId: col[4])
+                        _movieIdDict[mov.movieId] = mov
+                        _infoAr.append(mov)
                     }
                 }
             } catch let error as NSError {

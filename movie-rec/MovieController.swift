@@ -42,17 +42,6 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(MovieController.posterTapped(_:)))
         posterImg.userInteractionEnabled = true
         posterImg.addGestureRecognizer(tapGestureRecognizer)
-        
-        similarAr.append(Similar(index: 1, title: "title one"))
-        similarAr.append(Similar(index: 2, title: "title two"))
-        similarAr.append(Similar(index: 3, title: "title three"))
-        similarAr.append(Similar(index: 4, title: "title four"))
-        similarAr.append(Similar(index: 5, title: "title five"))
-        similarAr.append(Similar(index: 6, title: "title six"))
-        similarAr.append(Similar(index: 7, title: "title seven"))
-        similarAr.append(Similar(index: 8, title: "title eight"))
-        similarAr.append(Similar(index: 9, title: "title nine"))
-        similarAr.append(Similar(index: 10, title: "title ten"))
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -77,6 +66,13 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
                     }
                 }
             }
+        }
+        if let mov = movie {
+            let completionBlock: (movieAr: Array<Similar>) -> () = { ar in
+                self.similarAr = ar
+                self.tableView.reloadData()
+            }
+            MovieInfo.instance.getSimilarAr(mov, completion: completionBlock)
         }
         seg = false
     }

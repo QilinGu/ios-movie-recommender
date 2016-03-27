@@ -10,19 +10,19 @@ import Foundation
 
 class Similar {
     private var _index: String!
-    private var _title: String!
+    private var _movie: Movie!
     
     var index: String {
         return _index
     }
     
     var title: String {
-        return _title
+        return _movie.title
     }
     
-    init(index: Int, title: String) {
+    init(index: Int, movie: Movie) {
         _index = "\(index)."
-        _title = title
+        _movie = movie
     }
     
 }
