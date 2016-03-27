@@ -14,6 +14,7 @@ class StarControl: UIControl {
     private var starCount: CGFloat = 0.0
     private var beginPoint: CGPoint?
     private let numStars: Int = 5
+    private var blankStar = false
     
     var currentStarCount: CGFloat {
         set {
@@ -25,6 +26,15 @@ class StarControl: UIControl {
         }
         get {
             return starCount
+        }
+    }
+    
+    var blankEmpty: Bool {
+        set {
+            blankStar = newValue
+        }
+        get {
+            return blankStar
         }
     }
     
@@ -42,7 +52,10 @@ class StarControl: UIControl {
     
     func initAr() {
         starAr = []
-        let emptyStar = UIImage(named: "star-empty-gold")
+        var emptyStar = UIImage(named: "star-empty-gold")
+        if blankStar {
+            emptyStar = nil
+        }
         let padding = (self.bounds.width - (self.bounds.height * CGFloat(numStars))) / CGFloat(numStars)
         for i in 0...numStars - 1 {
             let rect = CGRectMake(CGFloat(i) * (self.bounds.height + padding) + (padding/2), 0.0, self.bounds.height, self.bounds.height)

@@ -14,6 +14,7 @@ class HistoryCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        starControl.blankEmpty = true
         // Initialization code
     }
 
