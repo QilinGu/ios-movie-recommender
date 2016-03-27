@@ -10,47 +10,15 @@ class MovieList(messages.Message):
 class MovieRec(messages.Message):
 	movieId = messages.StringField(1)
 
-class Account(ndb.Model):
-  username = ndb.StringProperty()
-  userid = ndb.IntegerProperty()
-  email = ndb.StringProperty()
-  tags = ndb.StringProperty(repeated = True)
-
 class similarMovieId(ndb.Model):
-  username = ndb.StringProperty()
-
-#def lookup(client, key):
-#    key = client.key('similarMovieId', key)
-#    task = client.get(key)
-#    result = []
-#    for i in range(1, 11):
-#        result.append(task[str(i)])
-#    return result
-
-#movieId is an int
-#def getSimilar(movieId):
-#	result = lookup(client, str(movieId))
-#	return MovieList(items=result)
+	items = ndb.StringProperty(repeated = True)
 
 #movieId is an int
 def getSimilar(movieId):
-	tagsList = ['test1', 'test2', 'test3', 'test4']
-	sandy = Account(username='Sandy', userid=123, email='sandy@gmail.com', tags = tagsList, id="12345")
-	sandy_key = sandy.put()
-	res = sandy_key.get()
-	print(res)
-	print(res.tags)
-
-	#test_key = ndb.Key(similarMovieId, '1')
-	#print(test_key.get())
-
-	movieIdList = ['9999', '8888', '7777', str(movieId)]
-	return MovieList(items=movieIdList)
+	test_key = ndb.Key(similarMovieId, str(movieId))
+	return MovieList(items=test_key.get().items)
 
 #movieId is an int
 def getRec(movieId):
 	return MovieRec(movieId="12345")
-
-
-
 
