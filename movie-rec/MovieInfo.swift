@@ -46,7 +46,7 @@ class MovieInfo {
         Alamofire.request(.GET, urlStr).responseJSON(completionHandler: { response in
             if let json = response.result.value as? Dictionary<String, AnyObject> {
                 if let ar = json["items"] as? Array<String> {
-                    for i in 0...10 {
+                    for i in 0..<10 {
                         let movieId = ar[i]
                         if let mov = self._movieIdDict[movieId] {
                             result.append(Similar(index: i+1, movie: mov))

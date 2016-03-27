@@ -19,6 +19,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
     @IBOutlet weak var filterBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var postBlur: UIImageView!
+    @IBOutlet weak var segBtn: SegButtonView!
     
     var similarAr = [Similar]()
     var movie: Movie?
@@ -45,6 +46,10 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
     }
     
     override func viewWillAppear(animated: Bool) {
+        selectMovie()
+    }
+    
+    func selectMovie() {
         if seg {
             if let hist = history {
                 movie = hist.movie
@@ -110,7 +115,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
     }
     
     @IBAction func segPressed(sender: SegButtonView) {
-        if sender.isLeftSelected {
+        if sender.LeftSelected {
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.starView.hidden = false
                 self.posterView.hidden = false
@@ -222,4 +227,14 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
             return SimilarCell()
         }
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let mov = similarAr[indexPath.row].movie
+        self.movie = mov
+        seg = true
+        self.tableView.hidden = true
+        segBtn.LeftSelected = true
+        selectMovie()
+    }
+    
 }

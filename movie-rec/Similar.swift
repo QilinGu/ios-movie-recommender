@@ -20,6 +20,10 @@ class Similar {
         return _movie.title
     }
     
+    var movie: Movie {
+        return _movie
+    }
+    
     init(index: Int, movie: Movie) {
         _index = "\(index)."
         _movie = movie

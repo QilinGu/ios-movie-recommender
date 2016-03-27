@@ -254,6 +254,7 @@
                         <outlet property="posterImg" destination="hYH-ld-14h" id="9B6-ul-Kso"/>
                         <outlet property="posterView" destination="KSq-fL-C9E" id="pff-U1-7Tb"/>
                         <outlet property="recBtn" destination="EbJ-hb-dxF" id="54e-e8-uaj"/>
+                        <outlet property="segBtn" destination="5qZ-wr-aAG" id="95C-8H-vyk"/>
                         <outlet property="starControl" destination="wsV-1F-fsp" id="CUQ-ii-qqk"/>
                         <outlet property="starView" destination="94y-Iw-6Xf" id="cSb-G7-2sw"/>
                         <outlet property="tableView" destination="5qP-qo-Z2D" id="dLw-YE-koD"/>

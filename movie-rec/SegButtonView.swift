@@ -14,8 +14,18 @@ class SegButtonView: UIControl {
     var rightLbl: UILabel!
     var leftLbl: UILabel!
     
-    var isLeftSelected: Bool {
-        return leftSelected
+    var LeftSelected: Bool {
+        set {
+            if newValue {
+                left()
+            } else {
+                right()
+            }
+        }
+        get {
+            return leftSelected
+        }
+  
     }
     
     override func awakeFromNib() {
@@ -52,18 +62,26 @@ class SegButtonView: UIControl {
     override func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
         let location = touch.locationInView(self)
         if location.x > (self.bounds.width / 2) && leftSelected{
-            leftSelected = false
-            self.sendActionsForControlEvents(.ValueChanged)
-            rightLbl.textColor = BLUE_COLOR
-            leftLbl.textColor = EXTRA_LIGHT_COLOR
+            right()
             return true
         } else if location.x <= (self.bounds.width / 2) && !leftSelected{
-            leftSelected = true
-            self.sendActionsForControlEvents(.ValueChanged)
-            rightLbl.textColor = EXTRA_LIGHT_COLOR
-            leftLbl.textColor = BLUE_COLOR
+            left()
         }
         return true
+    }
+    
+    func left() {
+        leftSelected = true
+        self.sendActionsForControlEvents(.ValueChanged)
+        rightLbl.textColor = EXTRA_LIGHT_COLOR
+        leftLbl.textColor = BLUE_COLOR
+    }
+    
+    func right() {
+        leftSelected = false
+        self.sendActionsForControlEvents(.ValueChanged)
+        rightLbl.textColor = BLUE_COLOR
+        leftLbl.textColor = EXTRA_LIGHT_COLOR
     }
 
 }
