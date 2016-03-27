@@ -103,7 +103,8 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
         setRec()
     }
 
-    @IBAction func nextPressed(sender: AnyObject) {
+    @IBAction func nextPressed(sender: UIButton) {
+        sender.userInteractionEnabled = false
         if starControl.currentStarCount == 0 {
             //skip
         } else {
@@ -210,6 +211,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
                     self.postBlur.alpha = 1.0
                     self.view.layoutIfNeeded()
                 }
+            self.recBtn.userInteractionEnabled = true
             })
     }
     
