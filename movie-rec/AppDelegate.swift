@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
+        if UID == nil {
+            let ref = Firebase(url: FIREBASE_REF)
+            ref.authAnonymouslyWithCompletionBlock({ error, authData in
+                if error != nil {
+                    print("could not login")
+                } else {
+                    NSUserDefaults.standardUserDefaults().setValue(authData.uid!, forKey: UID_KEY)
+                    print(UID)
+                }
+            })
+        } else {
+            print("already logged in")
+        }
+        
         return true
     }
 

@@ -32,3 +32,10 @@ let EXTRA_LIGHT_COLOR = UIColor(colorLiteralRed: 99.0/255.0, green: 99.0/255.0, 
 let HISTORY_FILE_NAME = "history.txt"
 
 let MOVIE_TAB_INDEX = 1
+
+let UID_KEY = "UID_KEY"
+let FIREBASE_REF = "https://movie-rec.firebaseIO.com"
+
+var UID: String? {
+    return NSUserDefaults.standardUserDefaults().valueForKey(UID_KEY) as? String
+}
