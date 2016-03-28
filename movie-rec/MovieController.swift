@@ -20,6 +20,7 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var postBlur: UIImageView!
     @IBOutlet weak var segBtn: SegButtonView!
+    @IBOutlet weak var likedLbl: UILabel!
     
     var similarAr = [Similar]()
     var movie: Movie?
@@ -33,6 +34,8 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
         tableView.delegate = self
         tableView.hidden = true
         tableView.alpha = 0.0
+        likedLbl.hidden = true
+        likedLbl.alpha = 0.0
         
         let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         let blurView = UIVisualEffectView(effect: darkBlur)
@@ -134,18 +137,22 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
                 self.posterView.hidden = false
                 self.recBtn.hidden = false
                 self.tableView.alpha = 0.0
+                self.likedLbl.alpha = 0.0
                 self.starView.alpha = 1.0
                 self.posterView.alpha = 1.0
                 self.recBtn.alpha = 1.0
                 self.postBlur.alpha = 1.0
                 }, completion: { (Bool) -> Void in
                     self.tableView.hidden = true
+                    self.likedLbl.hidden = true
             })
             
         } else {
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.tableView.hidden = false
+                self.likedLbl.hidden = false
                 self.tableView.alpha = 1.0
+                self.likedLbl.alpha = 1.0
                 self.starView.alpha = 0.0
                 self.posterView.alpha = 0.0
                 self.recBtn.alpha = 0.0
@@ -208,7 +215,9 @@ class MovieController: UIViewController,UIPopoverPresentationControllerDelegate,
                 self.updateMovie(movie, image: image)
                 UIView.animateWithDuration(totalDuration/2) {
                     self.movieTitle.alpha = 1.0
-                    self.postBlur.alpha = 1.0
+                    if self.segBtn.LeftSelected {
+                        self.postBlur.alpha = 1.0
+                    }
                     self.view.layoutIfNeeded()
                 }
             self.recBtn.userInteractionEnabled = true

@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print("could not login")
                 } else {
                     NSUserDefaults.standardUserDefaults().setValue(authData.uid!, forKey: UID_KEY)
-                    print(UID)
                 }
             })
         } else {
