@@ -38,6 +38,7 @@ for key in keyList:
             except:  
                 print('error')  
                 pass
+client.delete_multi(batchKey)
 
 k = 0
 batchList = []
@@ -54,8 +55,7 @@ for movie in simMat:
             except:  
                 print('error')  
                 pass
-
-        
+client.put_multi(batchList)       
 
 """k = 0
 batchList = []
