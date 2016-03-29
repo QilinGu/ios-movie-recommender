@@ -102,11 +102,11 @@
                                             <constraint firstAttribute="height" constant="21" id="42o-TV-Oy9"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5qP-qo-Z2D">
-                                        <rect key="frame" x="0.0" y="75" width="600" height="416"/>
+                                        <rect key="frame" x="0.0" y="75" width="600" height="404"/>
                                         <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="similarCell" rowHeight="55" id="AHo-7o-JWh" customClass="SimilarCell" customModule="movie_rec" customModuleProvider="target">
@@ -177,7 +177,7 @@
                                     <constraint firstItem="94y-Iw-6Xf" firstAttribute="leading" secondItem="laI-rN-ihv" secondAttribute="leading" constant="12" id="3Vo-S8-o79"/>
                                     <constraint firstAttribute="trailing" secondItem="5qZ-wr-aAG" secondAttribute="trailing" id="AVF-uI-Qpu"/>
                                     <constraint firstItem="94y-Iw-6Xf" firstAttribute="top" secondItem="KSq-fL-C9E" secondAttribute="bottom" constant="12" id="CRQ-Kc-KlK"/>
-                                    <constraint firstAttribute="bottom" secondItem="5qP-qo-Z2D" secondAttribute="bottom" id="D4A-rU-RW9"/>
+                                    <constraint firstAttribute="bottom" secondItem="5qP-qo-Z2D" secondAttribute="bottom" constant="12" id="D4A-rU-RW9"/>
                                     <constraint firstAttribute="trailing" secondItem="EbJ-hb-dxF" secondAttribute="trailing" constant="12" id="DQj-LZ-r9d"/>
                                     <constraint firstAttribute="trailing" secondItem="5qP-qo-Z2D" secondAttribute="trailing" id="FTb-Bi-fOc"/>
                                     <constraint firstItem="KSq-fL-C9E" firstAttribute="centerX" secondItem="laI-rN-ihv" secondAttribute="centerX" id="IVm-gY-9KV"/>
