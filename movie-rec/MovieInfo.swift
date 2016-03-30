@@ -64,7 +64,9 @@ class MovieInfo {
             if let json = response.result.value as? Dictionary<String, AnyObject> {
                 if let movieId = json["movieId"] as? String {
                     if let mov = self._movieIdDict[movieId] {
-                        completionBlock(mov: mov)
+                        let index = Int(arc4random_uniform(UInt32(self._infoAr.count)))
+                        completionBlock(mov: self._infoAr[index])
+                        //completionBlock(mov: mov)
                     }
                 }
             }
