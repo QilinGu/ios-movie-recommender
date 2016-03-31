@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,42 +19,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rio" translatesAutoresizingMaskIntoConstraints="NO" id="CFR-za-he9">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="214" width="600" height="386"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="kvv-Ey-JcH">
-                                <rect key="frame" x="0.0" y="123" width="600" height="204"/>
+                                <rect key="frame" x="0.0" y="30" width="600" height="204"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="204" id="Fpm-1w-hko"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="film" translatesAutoresizingMaskIntoConstraints="NO" id="iH3-qM-nN5">
-                                <rect key="frame" x="235" y="277" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="N30-f0-Hwo"/>
-                                    <constraint firstAttribute="height" constant="150" id="h4O-2a-F3l"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="CFR-za-he9" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="5nK-IX-f1c"/>
+                            <constraint firstItem="CFR-za-he9" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="200" id="5nK-IX-f1c"/>
                             <constraint firstItem="kvv-Ey-JcH" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-75" id="CM0-qN-nan"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="CFR-za-he9" secondAttribute="bottom" id="CUm-y6-fAl"/>
+                            <constraint firstItem="CFR-za-he9" firstAttribute="top" secondItem="kvv-Ey-JcH" secondAttribute="bottom" constant="-20" id="DZq-Wj-l4i"/>
                             <constraint firstItem="kvv-Ey-JcH" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="50" id="G1a-qg-y9o"/>
                             <constraint firstAttribute="trailing" secondItem="kvv-Ey-JcH" secondAttribute="trailing" id="NwR-bp-pgQ"/>
-                            <constraint firstItem="iH3-qM-nN5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="10" id="Pyo-9R-puv"/>
-                            <constraint firstItem="iH3-qM-nN5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="10" id="VFN-cV-lAc"/>
+                            <constraint firstItem="kvv-Ey-JcH" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="30" id="QMQ-zb-KOE"/>
                             <constraint firstItem="CFR-za-he9" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="gJY-WS-a6D"/>
-                            <constraint firstItem="iH3-qM-nN5" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="40" id="iAk-yo-XYB"/>
                             <constraint firstItem="kvv-Ey-JcH" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="mLe-w9-SaZ"/>
-                            <constraint firstItem="iH3-qM-nN5" firstAttribute="top" secondItem="kvv-Ey-JcH" secondAttribute="bottom" constant="-50" id="pAp-wK-Z0U"/>
                             <constraint firstAttribute="trailing" secondItem="CFR-za-he9" secondAttribute="trailing" id="tFQ-Hi-Ocz"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="CM0-qN-nan"/>
                                 <exclude reference="G1a-qg-y9o"/>
-                                <exclude reference="VFN-cV-lAc"/>
-                                <exclude reference="iAk-yo-XYB"/>
+                                <exclude reference="5nK-IX-f1c"/>
                             </mask>
                         </variation>
                     </view>
@@ -64,7 +56,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="film" width="600" height="600"/>
         <image name="rio" width="3919" height="2656"/>
         <image name="title" width="1200" height="600"/>
     </resources>
