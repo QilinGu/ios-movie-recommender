@@ -6,9 +6,9 @@ NOTE: project is currently under development
   - http://grouplens.org/datasets/movielens/
 - Can recommend movies based on user's preferences using Spark's implementation of collaborative filtering and matrix factorization model
   - http://spark.apache.org/docs/latest/mllib-collaborative-filtering.html   
-- Connects to a custom API running on Google's cloud platform that returns JSON movies recommendations
+- Connects to a custom API running on Google's cloud platform that returns JSON movie recommendations
 - Can also reccommend similar movies to another movie
-- Movies posters from The Movie Database
+- Movie posters from The Movie Database
   - https://www.themoviedb.org/
 - Users can also access IMDB info about the movie
 
