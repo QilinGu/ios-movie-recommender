@@ -1,7 +1,5 @@
 #Movie Recommender
 
-NOTE: project is currently under development
-
 - Using movie lens dataset of 10 million movie ratings from 137,000 users on 27,000 movies
   - http://grouplens.org/datasets/movielens/
 - Can recommend movies based on user's preferences using Spark's implementation of collaborative filtering and matrix factorization model
